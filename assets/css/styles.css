@@ -1,0 +1,286 @@
+/* @@@@@@@@@@@@@@@@@@ CSS STARTING TEMPLATE @@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@   UPDATED:3/18/2019   @@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+/* ******************   TABLE OF CONTENTS   ****************** */
+/* *********************************************************** *\
+
+xi. RESET
+xii. TOOLS
+1. SETUP
+2. HEADER
+3. ...
+Y. OVERRIDES
+Z. MEDIA QUERIES
+
+
+/* xi. **************         RESET         ****************** */
+/* *********************************************************** */
+
+img,legend{border:0}
+legend,td,th{padding:0}
+html{height:100%;box-sizing: border-box;font-family: 'Barlow', sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
+audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}
+a:active,a:hover{outline:0}
+abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}
+dfn{font-style:italic}
+mark{color:#000;background:#ff0}
+small{font-size:80%}
+sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+svg:not(:root){overflow:hidden}
+figure{margin:1em 40px}
+hr{height:0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+pre,textarea{overflow:auto}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
+button,input,optgroup,select,textarea{margin:0;font:inherit;color:inherit}
+button{overflow:visible}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
+input{line-height:normal}
+input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}
+input[type=search]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:textfield}
+input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}
+table{border-spacing:0;border-collapse:collapse}
+*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+body{height:100%;line-height:1;margin:0 !important;}
+ol,ul{list-style:none; margin-block-start: 0; margin-block-end: 0; margin-inline-start: 0px; margin-inline-end: 0px; padding-inline-start: 0;}
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+a,a:hover,a:focus{color:inherit;text-decoration:none}
+img{display: block;}
+p{margin-block-start: 0; margin-block-end: 0;}
+
+
+/* xii. *************         TOOLS         ****************** */
+/* *********************************************************** */
+
+@font-face {font-family: myFont; src: url("../font/big_noodle_titling.ttf");}
+
+.clearfix::after{content: ""; display: block; clear: both;}
+
+.flex-full{display: flex; justify-content: center; align-items: center;}
+.flex-row{flex-direction: row;}
+.flex-col{flex-direction: column;}
+
+.dark-txt {color: #0e0e0e}
+.dark-bg {background-color: #0e0e0e}
+
+.grey-txt {color: #353434}
+.grey-bg {background-color: #353435}
+
+.lite-grey-txt {color: #CCCCCC}
+.lite-grey-bg {background-color: #CCCCCC}
+
+.lite-txt {color: #ffffff}
+.lite-bg {background-color: #ffffff}
+
+.main-rgb-txt {color: #ff0000}
+.main-rgb-bg {background-color: #ff0000}
+.dark-rgb-txt {color: rgb(160, 0, 0)}
+.dark-rgb-bg {background-color: rgb(160, 0, 0)}
+.lite-rgb-txt {color: #ff3333}
+.lite-rgb-bg {background-color: #ff3333}
+
+h1,h2,h3,h4 {font-family: myFont; margin:0; padding:0;}
+
+h1{font-size:56px; letter-spacing: 1px;}
+h2{font-size:36px;}
+h3{font-size:24px;}
+h4{font-size:16px; line-height: 22px; font-weight: 400;}
+
+.fs1{font-size: 12px;}
+.fs2{font-size: 18px;}
+.fs3{font-size: 24px;}
+.fs4{font-size: 32px;}
+.fs5{font-size: 40px;}
+
+.fw-300 {font-weight: 300}
+.fw-400 {font-weight: 400}
+.fw-500 {font-weight: 500}
+.fw-600 {font-weight: 600}
+.fw-700 {font-weight: 700}
+.fw-800 {font-weight: 800}
+.fw-900 {font-weight: 900}
+
+.uppercase {text-transform: uppercase}
+.mont {font-family: 'Montserrat', sans-serif;}
+
+
+/* 1. ***************         SETUP         ****************** */
+/* *********************************************************** */
+
+body {
+    background-color: rgb(39, 39, 39);
+    font-size: 12px; 
+    color: rgb(24, 24, 24); 
+    font-family: myFont;
+}
+
+#wrapper {
+    max-width: 1220px; 
+    position: relative; 
+    margin: 0 auto; 
+    overflow: hidden; 
+    background-color: #fff;
+}
+
+
+/* 2. **************         HEADER         ****************** */
+/* *********************************************************** */
+
+header {
+    position: fixed;
+    width: 1220px;
+    top: 0;
+    z-index: 999;
+}
+
+.header-hi-bar {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    justify-content: space-between;
+}
+
+.header-low-bar {
+    width: 100%;
+    height: 15px;
+    background-color: rgb(160, 0, 0);
+}
+
+.header-side-box {
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+.side-box-left {
+    left: -20px;
+}
+
+.side-box-right {
+    right: -20px;
+}
+
+.header-bb-logo, .header-bb-logo img {
+    position: relative;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.trapezoid-left {
+	border-bottom: 15px solid rgb(39, 39, 39);
+	border-right: 20px solid rgb(160, 0, 0);
+	height: 0;
+	width: 0;
+}
+
+.trapezoid-right {
+	border-bottom: 15px solid rgb(39, 39, 39);
+	border-left: 20px solid rgb(160, 0, 0);
+	height: 0;
+	width: 0;
+}
+
+.header-camera {
+    position: absolute;
+    top: 75px;
+    width: 45px;
+}
+
+.camera-left {
+    left: 20px;
+}
+
+.camera-right {
+    right: 20px;
+}
+
+.nav {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav li {
+    position: relative;
+    padding: 10px 20px;
+    text-shadow: 1px 1px rgb(160, 0, 0);
+    transition: .3s;
+    cursor: pointer;
+}
+
+
+/* 3. **************          HERO          ****************** */
+/* *********************************************************** */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background-color: #fff;
+    margin-top: 85px;
+}
+
+
+/* 3. **************     WEEKLY  EVENTS     ****************** */
+/* *********************************************************** */
+
+.weekly-events {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: 50px 90px;
+}
+
+
+/* Y. ***************       OVERRIDES       ****************** */
+/* *********************************************************** */
+
+.hider {
+    display: none;
+}
+
+
+/* Z. ***************     MEDIA QUERIES     ****************** */
+/* *********************************************************** */
+
+@media (pointer: fine) {
+    /* HOVER EFFECTS */
+    .nav li:hover {
+        text-shadow: 3px 3px rgb(160, 0, 0);
+        transform: translate(-2px, -2px);
+    }
+    .header-bb-logo:hover > img {
+        transform: translate(-2px, -2px);
+    }
+}
+
+@media only screen and (max-width: 576px) { 
+    /* XS QUERIES */
+}
+
+@media only screen and (max-width: 768px) { 
+    /* S QUERIES */
+}
+
+@media only screen and (max-width: 992px) { 
+    /* M QUERIES */
+}
+
+@media only screen and (max-width: 1220px) { 
+    /* L QUERIES */
+}
