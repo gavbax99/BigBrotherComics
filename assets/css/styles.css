@@ -95,7 +95,7 @@ p{margin-block-start: 0; margin-block-end: 0;}
 h1,h2,h3,h4 {font-family: myFont; margin:0; padding:0;}
 
 h1{font-size:56px; letter-spacing: 1px;}
-h2{font-size:36px;}
+h2{font-size:22px;}
 h3{font-size:24px;}
 h4{font-size:16px; line-height: 22px; font-weight: 400;}
 
@@ -112,6 +112,8 @@ h4{font-size:16px; line-height: 22px; font-weight: 400;}
 .fw-700 {font-weight: 700}
 .fw-800 {font-weight: 800}
 .fw-900 {font-weight: 900}
+
+.font-p {line-height: 23px; font-size: 16px; font-family: 'Montserrat', sans-serif;}
 
 .uppercase {text-transform: uppercase}
 .mont {font-family: 'Montserrat', sans-serif;}
@@ -201,11 +203,11 @@ header {
 }
 
 .camera-left {
-    left: 20px;
+    left: 9px;
 }
 
 .camera-right {
-    right: 20px;
+    right: 9px;
 }
 
 .nav {
@@ -230,7 +232,6 @@ header {
 .hero {
     position: relative;
     width: 100%;
-    height: 550px;
     background-color: #fff;
     margin-top: 85px;
 }
@@ -243,9 +244,108 @@ header {
     position: relative;
     width: 100%;
     background-color: #fff;
-    padding: 50px 90px;
+    /* padding: 50px 90px; */
+    padding: 40px 60px;
 }
 
+.weekly-events-section {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.weekly-events-description {
+    /* min-width: 300px; */
+    /* max-width: 390px; */
+    max-width: 650px;
+    width: 100%;
+    margin-right: 30px;
+}
+.weekly-events-list {
+    /* max-width: 680px; */
+    max-width: 420px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.weekly-events-single {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.weekly-events-single-img {
+    position: relative;
+    display: inline-block;
+    min-width: 170px;
+    max-width: 170px;
+    height: 100px;
+    background-color: grey;
+    border-radius: 5px 0 0 5px;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+}
+
+.events-commander {
+    background-image: url("../images/commander.jpg");
+}
+
+.commander-height {
+    height: 87px;
+}
+
+.events-modern {
+    background-image: url("../images/thurs.jpg");
+}
+
+.modern-height {
+    height: 103px;
+}
+
+.events-fnm {
+    background-image: url("../images/fnm2.jpg");
+}
+
+.fnm-height {
+    height: 119px;
+}
+
+.events-sat {
+    background-image: url("../images/sat.jpg");
+}
+
+.sat-height {
+    height: 217px;
+}
+
+.weekly-events-single-description {
+    position: relative;
+    display: inline-block;
+    min-width: 250px; 
+    width: calc(100% - 170px);
+    background-color: rgb(226, 226, 226);
+    border-radius: 0 5px 5px 0;
+    padding: 6px 0 0 10px;
+}
+
+.weekly-events-single-description h2 {
+    text-shadow: 1px 1px rgb(246, 246, 246);
+    letter-spacing: 1px;
+}
+
+.weekly-events-single-description p {
+    line-height: 16px;
+}
+
+.weekly-events-img-date {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    font-size: 22px; 
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px rgb(2, 2, 2);
+}
 
 /* Y. ***************       OVERRIDES       ****************** */
 /* *********************************************************** */
@@ -261,11 +361,15 @@ header {
 @media (pointer: fine) {
     /* HOVER EFFECTS */
     .nav li:hover {
-        text-shadow: 3px 3px rgb(160, 0, 0);
-        transform: translate(-2px, -2px);
+        text-shadow: 1px 4px rgb(160, 0, 0);
+        transform: translate(0, -3px);
+        /* text-shadow: 3px 3px rgb(160, 0, 0);
+        transform: translate(-2px, -2px); */
     }
     .header-bb-logo:hover > img {
-        transform: translate(-2px, -2px);
+        transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
     }
 }
 
@@ -277,10 +381,13 @@ header {
     /* S QUERIES */
 }
 
-@media only screen and (max-width: 992px) { 
+@media only screen and (max-width: 990px) { 
     /* M QUERIES */
 }
 
 @media only screen and (max-width: 1220px) { 
     /* L QUERIES */
+    header {
+        width: 100%;
+    }
 }
