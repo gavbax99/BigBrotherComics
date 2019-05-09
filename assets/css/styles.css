@@ -95,8 +95,8 @@ p{margin-block-start: 0; margin-block-end: 0;}
 h1,h2,h3,h4 {font-family: myFont; margin:0; padding:0;}
 
 h1{font-size:56px; letter-spacing: 1px;}
-h2{font-size:22px;}
-h3{font-size:24px;}
+h2{font-size:36px;}
+h3{font-size:26px;}
 h4{font-size:16px; line-height: 22px; font-weight: 400;}
 
 .fs1{font-size: 12px;}
@@ -113,7 +113,7 @@ h4{font-size:16px; line-height: 22px; font-weight: 400;}
 .fw-800 {font-weight: 800}
 .fw-900 {font-weight: 900}
 
-.font-p {line-height: 23px; font-size: 16px; font-family: 'Montserrat', sans-serif;}
+.font-p {letter-spacing: .5px; line-height: 26px; font-size: 16px; font-family: 'Montserrat', sans-serif;}
 
 .uppercase {text-transform: uppercase}
 .mont {font-family: 'Montserrat', sans-serif;}
@@ -123,27 +123,33 @@ h4{font-size:16px; line-height: 22px; font-weight: 400;}
 /* *********************************************************** */
 
 body {
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(139, 139, 139);
+    /* background-color: rgb(39, 39, 39); */
     font-size: 12px; 
     color: rgb(24, 24, 24); 
     font-family: myFont;
 }
 
 #wrapper {
-    max-width: 1220px; 
+    max-width: 1330px; 
     position: relative; 
     margin: 0 auto; 
     overflow: hidden; 
     background-color: #fff;
 }
 
+.section-title {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
 /* 2. **************         HEADER         ****************** */
 /* *********************************************************** */
 
 header {
     position: fixed;
-    width: 1220px;
+    width: 1330px;
     top: 0;
     z-index: 999;
 }
@@ -183,14 +189,14 @@ header {
 }
 
 .trapezoid-left {
-	border-bottom: 15px solid rgb(39, 39, 39);
+	border-bottom: 15px solid rgb(139, 139, 139);
 	border-right: 20px solid rgb(160, 0, 0);
 	height: 0;
 	width: 0;
 }
 
 .trapezoid-right {
-	border-bottom: 15px solid rgb(39, 39, 39);
+	border-bottom: 15px solid rgb(139, 139, 139);
 	border-left: 20px solid rgb(160, 0, 0);
 	height: 0;
 	width: 0;
@@ -244,7 +250,6 @@ header {
     position: relative;
     width: 100%;
     background-color: #fff;
-    /* padding: 50px 90px; */
     padding: 40px 60px;
 }
 
@@ -254,33 +259,42 @@ header {
 }
 
 .weekly-events-description {
-    /* min-width: 300px; */
-    /* max-width: 390px; */
-    max-width: 650px;
+    max-width: 35%;
     width: 100%;
-    margin-right: 30px;
+    margin-right: 40px;
 }
-.weekly-events-list {
-    /* max-width: 680px; */
-    max-width: 420px;
+
+.weekly-events-facebook {
     width: 100%;
-    align-items: flex-start;
-    justify-content: flex-start;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    background-color: red;
+    padding: 10px 0;
+    border-radius: 100px;
+}
+
+.weekly-events-list-contaniner {
+    position: relative;
+    max-width: 65%;
+}
+
+.weekly-events-list {
+    width: 100%;
 }
 
 .weekly-events-single {
     width: 100%;
-    margin-bottom: 10px;
+    padding: 0 50px;
 }
 
 .weekly-events-single-img {
     position: relative;
     display: inline-block;
-    min-width: 170px;
-    max-width: 170px;
+    width: 100%;
     height: 100px;
     background-color: grey;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 5px 0 0;
     background-repeat: no-repeat;
     background-position: center; 
     background-size: cover;
@@ -290,61 +304,74 @@ header {
     background-image: url("../images/commander.jpg");
 }
 
-.commander-height {
-    height: 87px;
-}
-
-.events-modern {
-    background-image: url("../images/thurs.jpg");
-}
-
-.modern-height {
-    height: 103px;
-}
-
-.events-fnm {
-    background-image: url("../images/fnm2.jpg");
-}
-
-.fnm-height {
-    height: 119px;
-}
-
-.events-sat {
-    background-image: url("../images/sat.jpg");
-}
-
-.sat-height {
-    height: 217px;
-}
-
 .weekly-events-single-description {
     position: relative;
     display: inline-block;
-    min-width: 250px; 
-    width: calc(100% - 170px);
-    background-color: rgb(226, 226, 226);
-    border-radius: 0 5px 5px 0;
-    padding: 6px 0 0 10px;
+    width: 100%;
+    min-height: 230px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 0 0 5px 5px;
+    padding: 16px 20px;
 }
 
-.weekly-events-single-description h2 {
+.weekly-events-single-description h3 {
     text-shadow: 1px 1px rgb(246, 246, 246);
     letter-spacing: 1px;
 }
 
-.weekly-events-single-description p {
-    line-height: 16px;
-}
-
 .weekly-events-img-date {
     position: absolute;
-    top: 6px;
-    left: 12px;
-    font-size: 22px; 
+    bottom: 12px;
+    left: 20px;
+    font-size: 36px; 
     color: #fff;
     letter-spacing: 1px;
     text-shadow: 1px 1px rgb(2, 2, 2);
+}
+
+.weekly-event-ul {
+    letter-spacing: .5px;
+    line-height: 26px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif
+}
+
+.slick-dots li button::before {
+    font-size: 18px !important;
+}
+
+.events-button {
+    position: absolute;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    top: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transform: translate(0, -50%);
+}
+
+.events-prev {
+    left: 0;
+}
+
+.events-next {
+    right: 0;
+}
+
+.fa-caret-right, .fa-caret-left {
+    color: red;
+}
+
+/* 4. ***************       SECOND BOX       ****************** */
+/* *********************************************************** */
+
+.second-box {
+    position: relative;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+    padding: 40px 60px;
 }
 
 /* Y. ***************       OVERRIDES       ****************** */
@@ -352,6 +379,10 @@ header {
 
 .hider {
     display: none;
+}
+
+.slick-prev, .slick-next {
+    display: none !important;
 }
 
 
@@ -385,7 +416,7 @@ header {
     /* M QUERIES */
 }
 
-@media only screen and (max-width: 1220px) { 
+@media only screen and (max-width: 1330px) { 
     /* L QUERIES */
     header {
         width: 100%;
