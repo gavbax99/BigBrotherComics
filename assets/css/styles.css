@@ -14,6 +14,7 @@ xii. TOOLS
 Y. OVERRIDES
 Z. MEDIA QUERIES
 
+/* https://via.placeholder.com/350x150 */
 
 /* xi. **************         RESET         ****************** */
 /* *********************************************************** */
@@ -123,7 +124,7 @@ h4{font-size:16px; line-height: 22px; font-weight: 400;}
 /* *********************************************************** */
 
 body {
-    background-color: rgb(139, 139, 139);
+    background-color: rgb(39, 39, 39);
     /* background-color: rgb(39, 39, 39); */
     font-size: 12px; 
     color: rgb(24, 24, 24); 
@@ -131,7 +132,7 @@ body {
 }
 
 #wrapper {
-    max-width: 1330px; 
+    max-width: 1440px; 
     position: relative; 
     margin: 0 auto; 
     overflow: hidden; 
@@ -141,7 +142,7 @@ body {
 .section-title {
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
 /* 2. **************         HEADER         ****************** */
@@ -149,7 +150,7 @@ body {
 
 header {
     position: fixed;
-    width: 1330px;
+    width: 1440px;
     top: 0;
     z-index: 999;
 }
@@ -189,14 +190,14 @@ header {
 }
 
 .trapezoid-left {
-	border-bottom: 15px solid rgb(139, 139, 139);
+	border-bottom: 15px solid rgb(39, 39, 39);
 	border-right: 20px solid rgb(160, 0, 0);
 	height: 0;
 	width: 0;
 }
 
 .trapezoid-right {
-	border-bottom: 15px solid rgb(139, 139, 139);
+	border-bottom: 15px solid rgb(39, 39, 39);
 	border-left: 20px solid rgb(160, 0, 0);
 	height: 0;
 	width: 0;
@@ -250,7 +251,7 @@ header {
     position: relative;
     width: 100%;
     background-color: #fff;
-    padding: 40px 60px;
+    padding: 60px 70px 60px 80px;
 }
 
 .weekly-events-section {
@@ -259,24 +260,30 @@ header {
 }
 
 .weekly-events-description {
-    max-width: 35%;
+    max-width: 39%;
     width: 100%;
-    margin-right: 40px;
+    text-align: center;
 }
 
 .weekly-events-facebook {
-    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.weekly-events-facebook p {
     margin: 0 auto;
     text-align: center;
     color: #fff;
     background-color: red;
-    padding: 10px 0;
+    padding: 10px 50px;
     border-radius: 100px;
+    cursor: pointer;
+    transition: .4s;
 }
 
 .weekly-events-list-contaniner {
     position: relative;
-    max-width: 65%;
+    max-width: 57%;
 }
 
 .weekly-events-list {
@@ -304,14 +311,38 @@ header {
     background-image: url("../images/commander.jpg");
 }
 
+.events-2 {
+    background-image: url("../images/animar.jpg");
+}
+
+.events-3 {
+    background-image: url("../images/fnm2.jpg");
+}
+
+.events-4 {
+    background-image: url("../images/sat.jpg");
+}
+
 .weekly-events-single-description {
     position: relative;
     display: inline-block;
     width: 100%;
-    min-height: 230px;
+    min-height: 200px;
     background-color: rgb(248, 248, 248);
     border-radius: 0 0 5px 5px;
-    padding: 16px 20px;
+    padding: 18px 25px;
+    justify-content: space-between;
+}
+
+.weekly-events-saturday-description {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 0 0 5px 5px;
+    padding: 18px 25px;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .weekly-events-single-description h3 {
@@ -322,7 +353,7 @@ header {
 .weekly-events-img-date {
     position: absolute;
     bottom: 12px;
-    left: 20px;
+    left: 25px;
     font-size: 36px; 
     color: #fff;
     letter-spacing: 1px;
@@ -364,15 +395,52 @@ header {
     color: red;
 }
 
-/* 4. ***************       SECOND BOX       ****************** */
+.saturday-left {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 15px;
+}
+
+.saturday-right {
+    align-items: flex-end;
+    text-align: right;
+    padding-left: 15px;
+}
+
+/* 4. ***************       NEW RELEASES       ****************** */
 /* *********************************************************** */
 
-.second-box {
+.new-releases {
     position: relative;
     width: 100%;
     background-color: rgb(248, 248, 248);
-    padding: 40px 60px;
+    padding: 60px 80px;
 }
+
+
+/* 4. ***************       TABLE GAMES       ****************** */
+/* *********************************************************** */
+
+.table-games {
+    position: relative;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 60px 80px;
+}
+
+
+/* X. ***************       FOOTER       ****************** */
+/* *********************************************************** */
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: rgb(160, 0, 0);
+    padding: 20px 80px;
+    color: #fff;
+}
+
+
 
 /* Y. ***************       OVERRIDES       ****************** */
 /* *********************************************************** */
@@ -385,6 +453,9 @@ header {
     display: none !important;
 }
 
+.fas {
+    transition: .4s !important;
+}
 
 /* Z. ***************     MEDIA QUERIES     ****************** */
 /* *********************************************************** */
@@ -402,6 +473,12 @@ header {
         -ms-transform: scale(1.1, 1.1);
         -webkit-transform: scale(1.1, 1.1);
     }
+    .events-button:hover .fas {
+        color: rgb(160,0,0);
+    }
+    .weekly-events-facebook:hover p {
+        background-color: rgb(160, 0, 0);
+    }
 }
 
 @media only screen and (max-width: 576px) { 
@@ -410,13 +487,14 @@ header {
 
 @media only screen and (max-width: 768px) { 
     /* S QUERIES */
+    /* Hamburger start */
 }
 
 @media only screen and (max-width: 990px) { 
     /* M QUERIES */
 }
 
-@media only screen and (max-width: 1330px) { 
+@media only screen and (max-width: 1440px) { 
     /* L QUERIES */
     header {
         width: 100%;
