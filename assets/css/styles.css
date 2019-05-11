@@ -422,7 +422,7 @@ header {
     position: relative;
     width: 100%;
     background-color: rgb(240,240,240);
-    padding: 60px 80px;
+    padding: 60px 80px 40px 80px;
 }
 
 
@@ -443,7 +443,7 @@ header {
 .contact {
     position: relative;
     width: 100%;
-    background-color: rgb(240,240,240);
+    background-color: rgb(240, 240, 240);
     padding: 60px 80px;
 }
 
@@ -511,6 +511,54 @@ footer {
     transition: .4s !important;
 }
 
+.dmdNewReleasesWidgetPBPW {
+    display: none !important;
+}
+
+.dmdNewReleasesWidget {
+    padding: 0 !important;
+}
+
+.dmdNewReleasesWidget h2 {
+    font-size: 28px !important;
+    text-shadow: .5px .5px rgb(160, 0, 0);
+}
+
+.dmdNewReleasesWidgetWeekSelection {
+    padding-bottom: 25px !important;
+    font-size: 15px !important;
+}
+
+.dmdNewReleasesWidgetWeekSelection a {
+    text-decoration: underline;
+    transition: .4s;
+}
+
+.dmdNewReleasesWidgetPager {
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+    margin: 0 !important;
+}
+
+.dmdNewReleasesWidgetPager a {
+    margin: 0 5px !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    border-radius: 100px !important;
+}
+
+.dmdNewReleasesWidgetTitle {
+    display: inline-block;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 5px 5px 5px;
+    text-overflow: ellipsis;
+    color: #ff0000;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 /* Z. ***************     MEDIA QUERIES     ****************** */
 /* *********************************************************** */
 
@@ -531,6 +579,12 @@ footer {
         color: rgb(160,0,0);
     }
     .weekly-events-facebook:hover p {
+        background-color: rgb(160, 0, 0);
+    }
+    .dmdNewReleasesWidgetWeekSelection a:hover {
+        color: rgb(160,0,0);
+    }
+    .dmdNewReleasesWidgetPager a:hover {
         background-color: rgb(160, 0, 0);
     }
 }
