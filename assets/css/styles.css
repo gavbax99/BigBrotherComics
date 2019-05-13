@@ -125,7 +125,6 @@ h4{font-size:16px; line-height: 22px; font-weight: 400;}
 
 body {
     background-color: rgb(39, 39, 39);
-    /* background-color: rgb(39, 39, 39); */
     font-size: 12px; 
     color: rgb(24, 24, 24); 
     font-family: myFont;
@@ -153,6 +152,16 @@ header {
     width: 1440px;
     top: 0;
     z-index: 999;
+}
+
+.header-bb-title {
+    padding-left: 6px;
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 1px 1px rgb(160, 0, 0);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: myFont;
 }
 
 .header-hi-bar {
@@ -425,6 +434,14 @@ header {
     padding: 60px 80px 40px 80px;
 }
 
+.new-releases-mobile {
+    display: none;
+}
+
+.new-releases-desktop {
+    display: block;
+}
+
 
 /* 4. ***************       TABLE GAMES       ****************** */
 /* *********************************************************** */
@@ -433,8 +450,59 @@ header {
     position: relative;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    padding: 60px 80px;
+    padding: 60px;
 }
+
+.table-games-container {
+    width: 100%;
+}
+
+.table-games-box {
+    width: 50%;
+    border: 1px solid red;
+    justify-content: space-evenly;
+}
+
+.table-games-item {
+    text-align: center;
+    width: 50%;
+    margin-bottom: 10px
+}
+
+.tg-item-icon {
+    border: 1px solid blue;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.tg-item-title {
+    border: 1px solid blue;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: .5px;
+    word-spacing: 1px;
+    color: red;
+    text-shadow: 1px 1px rgb(160, 0, 0);
+}
+
+.tg-item-title span {
+    padding-bottom: 2px;
+}
+
+.tg-title-underline {
+    height: 3px;
+    background-color: red;
+    width: 75px;
+    box-shadow: 1px 1px rgb(160, 0, 0);
+}
+
+.tg-item-list {
+    border: 1px solid blue;
+    height: 160px;
+    width: 100%;
+}
+
 
 
 /* 4. ***************       CONTACT       ****************** */
@@ -453,12 +521,13 @@ header {
 }
 
 .map-container {
-    width: 40%;
+    width: 48%;
     height: 400px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    box-shadow: 0 5px 15px rgba(39, 39, 39, .15);
     overflow: hidden;
 }
 
@@ -481,6 +550,13 @@ header {
 .iframe-width {
     width: 100%;
     height: 400px;
+}
+
+.contact-form-container {
+    width: 48%;
+    height: 400px;
+    background-color: red;
+
 }
 
 /* X. ***************       FOOTER       ****************** */
@@ -525,7 +601,7 @@ footer {
 }
 
 .dmdNewReleasesWidgetWeekSelection {
-    padding-bottom: 25px !important;
+    padding-bottom: 15px !important;
     font-size: 15px !important;
 }
 
@@ -535,7 +611,7 @@ footer {
 }
 
 .dmdNewReleasesWidgetPager {
-    padding-top: 20px !important;
+    padding-top: 30px !important;
     padding-bottom: 40px !important;
     margin: 0 !important;
 }
@@ -593,13 +669,41 @@ footer {
     /* XS QUERIES */
 }
 
+@media only screen and (max-width: 650px) { 
+    .table-games-box {
+        flex-direction: column;
+    }
+
+    .table-games-item {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 768px) { 
     /* S QUERIES */
     /* Hamburger start */
+    .new-releases-mobile {
+        display: block;
+    }
+    
+    .new-releases-desktop {
+        display: none;
+    }
+
+    .new-releases {
+        padding: 60px 40px 40px 40px;
+    }
 }
 
 @media only screen and (max-width: 990px) { 
     /* M QUERIES */
+    .table-games-container {
+        flex-direction: column;
+    }
+
+    .table-games-box {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 1440px) { 
