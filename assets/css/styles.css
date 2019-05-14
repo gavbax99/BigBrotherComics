@@ -374,7 +374,7 @@ header {
     font-size: 36px; 
     color: #fff;
     letter-spacing: 1px;
-    text-shadow: 1px 1px rgb(2, 2, 2);
+    text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000;
 }
 
 .weekly-event-ul {
@@ -459,27 +459,25 @@ header {
 
 .table-games-box {
     width: 50%;
-    border: 1px solid red;
     justify-content: space-evenly;
 }
 
 .table-games-item {
     text-align: center;
     width: 50%;
-    margin-bottom: 10px
+    margin-bottom: 0px
 }
 
 .tg-item-icon {
-    border: 1px solid blue;
-    padding: 10px 0;
     width: 100%;
+    padding-bottom: 24px;
 }
 
 .tg-item-title {
-    border: 1px solid blue;
     width: 100%;
+    padding: 0 5px 24px 5px;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 34px;
     letter-spacing: .5px;
     word-spacing: 1px;
     color: red;
@@ -487,7 +485,7 @@ header {
 }
 
 .tg-item-title span {
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 }
 
 .tg-title-underline {
@@ -498,11 +496,23 @@ header {
 }
 
 .tg-item-list {
-    border: 1px solid blue;
-    height: 160px;
     width: 100%;
+    padding: 0 20%;
 }
 
+.tg-item-list ul {
+    list-style-type: none;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.tg-item-list ul li {
+    margin-bottom: 10px;
+}
+
+.tg-item-list ul li:last-of-type {
+    margin-bottom: 0px;
+}
 
 
 /* 4. ***************       CONTACT       ****************** */
@@ -703,6 +713,10 @@ footer {
 
     .table-games-box {
         width: 100%;
+    }
+    
+    .table-games-item {
+        margin-bottom: 40px
     }
 }
 
