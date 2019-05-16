@@ -128,6 +128,7 @@ body {
     font-size: 12px; 
     color: rgb(24, 24, 24); 
     font-family: myFont;
+    overflow: hidden;
 }
 
 #wrapper {
@@ -144,6 +145,18 @@ body {
     margin-bottom: 45px;
 }
 
+.preloader {
+    max-width: 1440px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 500;
+    background-color: rgb(82, 82, 82);
+    transition: all 1s cubic-bezier(.75, 0, .78, .38); 
+    -webkit-transition: all 1s cubic-bezier(.75, 0, .78, .38); 
+    -moz-transition: all 1s cubic-bezier(.75, 0, .78, .38); 
+}
+
 /* 2. **************         HEADER         ****************** */
 /* *********************************************************** */
 
@@ -152,6 +165,16 @@ header {
     width: 1440px;
     top: 0;
     z-index: 999;
+}
+
+.header-preloader {
+    z-index: 9999;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: 1s;
 }
 
 .header-bb-title {
@@ -254,6 +277,98 @@ header {
 }
 
 
+/* 3. **************          BULLETIN          ****************** */
+/* *********************************************************** */
+
+.bulletin {
+    position: relative;
+    width: 100%;
+    background-color: rgb(240,240,240);
+    padding: 60px 80px;
+}
+
+.bulletin-posted-date {
+    font-size: 16px;
+}
+
+.bulletin-section {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.bulletin-img-box {
+    width: 40%;
+    padding-bottom: 25%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(39, 39, 39, .15);
+}
+
+.bulletin-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url("../images/website-banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.bulletin-text-box {
+    width: 56%;
+    position: relative;
+}
+
+.bulletin-text-top {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    /* border: 1px solid rgba(1,1,1,.5); */
+    border-top: 1px solid rgba(100,100,100,.3);
+    border-left: 1px solid rgba(100,100,100,.3);
+    border-right: 1px solid rgba(100,100,100,.3);
+    padding: 15px 25px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bulletin-title {
+    font-size: 34px;
+    letter-spacing: .5px;
+    word-spacing: 1px;
+    padding-bottom: 7px;
+}
+
+.bulletin-author {
+    font-size: 16px;
+}
+
+.bulletin-text-bottom {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid rgba(100,100,100,.3);
+    border-left: 1px solid rgba(100,100,100,.3);
+    border-right: 1px solid rgba(100,100,100,.3);
+    padding: 15px 25px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.see-past-bulletin {
+    padding-top: 14px;
+    padding-right: 3px;
+    text-align: right;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.see-past-bulletin a {
+    transition: .4s;
+}
+
 /* 3. **************     WEEKLY  EVENTS     ****************** */
 /* *********************************************************** */
 
@@ -277,7 +392,7 @@ header {
 }
 
 .weekly-events-description {
-    max-width: 39%;
+    max-width: 40%;
     width: 100%;
     text-align: center;
 }
@@ -424,6 +539,14 @@ header {
     padding-left: 15px;
 }
 
+.saturday-right-desktop {
+    display: block;
+}
+
+.saturday-right-mobile {
+    display: none;
+}
+
 /* 4. ***************       NEW RELEASES       ****************** */
 /* *********************************************************** */
 
@@ -525,6 +648,26 @@ header {
     padding: 60px 80px;
 }
 
+.contact-info {
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-numbers {
+    
+}
+
+.contact-numbers-list {
+    font-size: 28px;
+}
+
+.contact-numbers-list li {
+    padding: 0 20px;
+    text-shadow: 0.5px 0.5px rgb(160, 0, 0);
+    color: red;
+}
+
 .contact-section {
     justify-content: space-between;
     align-items: flex-start;
@@ -539,6 +682,7 @@ header {
     justify-content: flex-start;
     box-shadow: 0 5px 15px rgba(39, 39, 39, .15);
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .mapouter {
@@ -606,6 +750,7 @@ footer {
 }
 
 .dmdNewReleasesWidget h2 {
+    font-weight: 500;
     font-size: 28px !important;
     text-shadow: .5px .5px rgb(160, 0, 0);
 }
@@ -653,39 +798,76 @@ footer {
     .nav li:hover {
         text-shadow: 1px 4px rgb(160, 0, 0);
         transform: translate(0, -3px);
-        /* text-shadow: 3px 3px rgb(160, 0, 0);
-        transform: translate(-2px, -2px); */
     }
+
     .header-bb-logo:hover > img {
         transform: scale(1.1, 1.1);
         -ms-transform: scale(1.1, 1.1);
         -webkit-transform: scale(1.1, 1.1);
     }
+
     .events-button:hover .fas {
         color: rgb(160,0,0);
     }
+
     .weekly-events-facebook:hover p {
         background-color: rgb(160, 0, 0);
     }
+
     .dmdNewReleasesWidgetWeekSelection a:hover {
-        color: rgb(160,0,0);
+        color: red;
     }
+
     .dmdNewReleasesWidgetPager a:hover {
         background-color: rgb(160, 0, 0);
     }
+
+    .see-past-bulletin a:hover {
+        color: red;
+    }
 }
 
-@media only screen and (max-width: 576px) { 
-    /* XS QUERIES */
+
+@media only screen and (max-width: 1440px) { 
+    /* L QUERIES */
+    header {
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 650px) { 
-    .table-games-box {
+@media only screen and (max-width: 990px) { 
+    /* M QUERIES */
+    .table-games-container {
         flex-direction: column;
     }
 
-    .table-games-item {
+    .table-games-box {
         width: 100%;
+    }
+    
+    .table-games-item {
+        margin-bottom: 40px
+    }
+
+    .weekly-events-saturday-description {
+        flex-direction: column;
+    }
+
+    .saturday-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .saturday-right {
+        width: 100%;
+    }
+    
+    .saturday-right-desktop {
+        display: none;
+    }
+
+    .saturday-right-mobile {
+        display: block;
     }
 }
 
@@ -703,26 +885,144 @@ footer {
     .new-releases {
         padding: 60px 40px 40px 40px;
     }
-}
 
-@media only screen and (max-width: 990px) { 
-    /* M QUERIES */
-    .table-games-container {
+    .weekly-events {
+        padding: 60px 40px 80px 40px;
+    }
+
+    .weekly-events-section {
         flex-direction: column;
     }
 
-    .table-games-box {
+    .weekly-events-description {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .weekly-events-description p {
+        max-width: 80%;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .weekly-events-list-contaniner {
+        max-width: 100%;
+    }
+
+    .weekly-events-facebook p {
+        width: 80%;
+        font-size: 12px;
+        color: #fff;
+        background-color: red;
+        padding: 6px 25px;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: .4s;
+    }
+
+    .weekly-events-facebook {
+        display: block;
+        width: 80%;
+    }
+
+    .bulletin {
+        padding: 60px;
+    }
+
+    .bulletin-section {
+        flex-direction: column;
+    }
+
+    .bulletin-img-box {
+        width: 100%;
+        padding-bottom: 50%;
+        margin-bottom: 20px;
+    }
+
+    .bulletin-text-box {
         width: 100%;
     }
-    
-    .table-games-item {
-        margin-bottom: 40px
+
+    .nav {
+        display: none;
     }
 }
 
-@media only screen and (max-width: 1440px) { 
-    /* L QUERIES */
-    header {
+
+@media only screen and (max-width: 650px) { 
+    .table-games-box {
+        flex-direction: column;
+    }
+
+    .table-games-item {
         width: 100%;
     }
 }
+
+
+@media only screen and (max-width: 576px) { 
+    /* XS QUERIES */
+
+    .weekly-events-single {
+        padding: 0 10px;
+    }
+
+    .events-next {
+        right: -35px;
+    }
+
+    .events-prev {
+        left: -35px;
+    }
+
+    .weekly-events-facebook {
+        width: 100%;
+    }
+
+    .weekly-events-description {
+        max-width: 100%
+    }
+
+    .weekly-events-description p {
+        max-width: 100%
+    }
+
+    .weekly-events {
+        padding: 40px 40px 70px 40px;
+    }
+
+    .new-releases {
+        padding: 40px 40px 20px 40px;
+    }
+
+    .bulletin {
+        padding: 40px 30px 30px 30px;
+    }
+
+    .bulletin-text-bottom {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    .table-games {
+        padding: 40px 30px 20px 30px
+    }
+
+    .tg-item-list {
+        padding: 0;
+    }
+
+    .tg-item-title {
+        padding: 0 0 24px 0;
+    }
+
+    .contact {
+        padding: 40px 30px 30px 30px;
+    }
+}
+

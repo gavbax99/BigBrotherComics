@@ -25,9 +25,32 @@
 
     <div id="wrapper">
 
+        <!-- PRELOADER START -->
+        <div class="flex-full flex-col preloader">
+            <div style="width:50px; height: 50px; background-color: red;"></div>
+        </div>
+        <!-- PRELOADER END -->
+
 
         <!-- HEADER START -->
         <header>
+
+            <!-- PART OF THE PRELOADER -->
+            <div class="header-preloader">
+                <div class="flex-full flex-row" style="height: 70px; background-color: rgb(255, 0, 0); justify-content: flex-start;">
+                    <div class="flex-full flex-row" style="padding: 0 20px; height: 100%;">
+                        <img src="./assets/images/logo_white.png" height="50" alt="BB logo">
+                        <div class="header-bb-title">
+                            Big<br>
+                            Brother<br>
+                            Comics
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PART OF THE PRELOADER END -->
+
+
             <div class="header-side-box side-box-left">
                 <div style="height: 70px; width: 100%; background-color: rgb(255, 0, 0); content: '';"></div>
                 <div class="trapezoid-left"></div>
@@ -73,6 +96,42 @@
 
         </section>
         <!-- HERO END -->
+
+        <!-- BULLETIN START -->
+        <section id="bulletin-nav" class="bulletin">
+
+            <div class="section-title">
+                <h1 class="main-rgb-txt" style="margin-bottom: 2px; text-shadow: 1px 1px rgb(160, 0, 0);">Bulletin Board</h1>
+                <div style="height: 4px; background-color: red; width: 205px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto; margin-bottom: 15px;"></div>
+                <div class="bulletin-posted-date mont">This bulletin posted on <span style="font-weight: 700; color: red; text-shadow: .5px .5px rgb(160, 0, 0);">5/15/2019</span></div>
+            </div>
+
+            <div class="flex-full flex-row bulletin-section">
+
+                <div class="bulletin-img-box">
+                    <div class="bulletin-img"></div>
+                </div>
+
+                <div class="bulletin-text-box">
+                    <div class="flex-full flex-col bulletin-text-top">
+                        <div class="bulletin-title">This is a title.</div>
+                        <div class="bulletin-author mont">Posted by <span style="font-weight: 700;">Staff</span></div>
+                    </div>
+
+                    <div class="flex-full flex-col bulletin-text-bottom mont font-p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ratione iusto dolorum laborum placeat magnam rerum! Ab nobis minus aut magnam, dolores pariatur, eligendi non delectus blanditiis provident quidem voluptatibus.<br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, labore porro vel exercitationem, facilis nisi debitis quaerat temporibus eveniet pariatur esse voluptatum, sit deserunt voluptatem tempora suscipit dicta alias perspiciatis!
+                    </div>
+
+                    <div class="see-past-bulletin mont">
+                            <a href="#">See past bulletins</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- BULLETIN END -->
 
 
         <!-- WEEKLY EVENTS START -->
@@ -180,7 +239,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="flex-full flex-col saturday-event saturday-right">
+                                <div class="flex-full flex-col saturday-event saturday-right saturday-right-desktop">
                                     <h3 style="margin-bottom: 8px;">Board Game Night</h3>
                                     <ul class="weekly-event-ul">
                                         <li>4:00PM - 8:00PM<i class="fas fa-angle-left" style="padding-left: 5px;"></i></li>
@@ -189,6 +248,17 @@
                                         <li><strong>Stay-n-Play Discount:</strong></li>
                                         <li>20% off board game purchase if</li>
                                         <li>you stay and play it that night!</li>
+                                    </ul>
+                                </div>
+
+                                <div class="flex-full flex-col saturday-event saturday-left saturday-right-mobile" style="margin-bottom: 0 !important;">
+                                    <h3 style="margin-bottom: 8px;">Standard Showdown</h3>
+                                    <ul class="weekly-event-ul">
+                                        <li><i class="fas fa-angle-right" style="padding-right: 5px;"></i>4:00PM - 8:00PM</li>
+                                        <li><i class="fas fa-angle-right" style="padding-right: 5px;"></i>Free to enter</li>
+                                        <li><i class="fas fa-angle-right" style="padding-right: 5px;"></i>Meet people, play games!</li>
+                                        <li><strong>Stay-n-Play Discount:</strong></li>
+                                        <li>20% off board game purchase if you stay and play it that night!</li>
                                     </ul>
                                 </div>
 
@@ -229,7 +299,6 @@
                     <script type="text/javascript" src="https://retailerservices.diamondcomics.com/Widgets/NewReleasesComics/36bfe8fff03c4508a7d5e1e44c62f7a1"></script>
                 </div>
                 <!-- WIDGET END -->
-
 
         </section>
         <!-- NEW RELEASES END -->
@@ -330,9 +399,25 @@
         <!-- CONTACT START -->
         <section id="contact-nav" class="contact">
 
-                <div class="section-title">
+                <div class="section-title" style="margin-bottom: 20px !important;">
                     <h1 class="main-rgb-txt" style="margin-bottom: 2px; text-shadow: 1px 1px rgb(160, 0, 0);">Contact</h1>
                     <div style="height: 4px; background-color: red; width: 100px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto;"></div>
+                </div>
+
+                <div class="flex-full flex-col contact-info">
+
+                    <div class="contact-numbers">
+                        <ul class="flex-full flex-row contact-numbers-list">
+                            <li>0 916 420 6376</li>
+                            <li>0 bigbrothercomics@gmail.com</li>
+                            <li>0 BB on Facebook</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-hours">
+
+                    </div>
+
                 </div>
 
                 <div class="flex-full flex-row contact-section">
