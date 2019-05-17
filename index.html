@@ -9,7 +9,7 @@
     <title>Big Brother Comics</title>
     <meta name="description" content="Big Brother Comics is your number one source for comics, board games, and Magic the Gathering in Sacramento!">
     <meta name="author" content="Gavin Baxter | https://gavbax99.github.io/UCDPortfolio/">
-    <link rel="shortcut icon" href="https://media.egia.org/images_website/partner/goodman/goodman_icon.png" />
+    <link rel="shortcut icon" href="./assets/images/favicon.png" />
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -32,6 +32,19 @@
         <!-- PRELOADER END -->
 
 
+        <!-- HAM NAV START -->
+        <div class="nav-overlay">
+            <ul class="nav-ul">
+                <li class="nav-button" data-name="events-nav">EVENT SCHEDULE</li>
+                <li class="nav-button" data-name="comics-nav">COMICS</li>
+                <li class="nav-button" data-name="games-nav">TABLE TOP GAMES</li>
+                <li class="nav-button" data-name="contact-nav">CONTACT</li>
+                <li style="margin-bottom: 0 !important;"><img src="./assets/images/facebook.svg" width="35" style="display: inline;"></li>
+            </ul>
+        </div>
+        <!-- HAM NAV END -->
+
+
         <!-- HEADER START -->
         <header>
 
@@ -39,7 +52,7 @@
             <div class="header-preloader">
                 <div class="flex-full flex-row" style="height: 70px; background-color: rgb(255, 0, 0); justify-content: flex-start;">
                     <div class="flex-full flex-row" style="padding: 0 20px; height: 100%;">
-                        <img src="./assets/images/logo_white.png" height="50" alt="BB logo">
+                        <img src="./assets/images/bb_logo_white_box.svg" height="50" alt="BB logo">
                         <div class="header-bb-title">
                             Big<br>
                             Brother<br>
@@ -49,7 +62,6 @@
                 </div>
             </div>
             <!-- PART OF THE PRELOADER END -->
-
 
             <div class="header-side-box side-box-left">
                 <div style="height: 70px; width: 100%; background-color: rgb(255, 0, 0); content: '';"></div>
@@ -63,7 +75,7 @@
 
             <div class="flex-full flex-row header-hi-bar">
                 <div class="flex-full flex-row header-bb-logo" style="padding: 0 20px; height: 100%;">
-                    <img src="./assets/images/logo_white.png" height="50" alt="BB logo">
+                    <img src="./assets/images/bb_logo_white_box.svg" height="50" alt="BB logo">
                     <div class="header-bb-title">
                         Big<br>
                         Brother<br>
@@ -71,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="flex-full flex-row" style="padding: 0 20px; height: 100%;">
+                <div class="flex-full flex-row nav-hider" style="padding: 0 20px; height: 100%;">
                     <ul class="flex-full flex-row nav">
                         <li class="nav-button" data-name="events-nav">EVENT SCHEDULE</li>
                         <li class="nav-button" data-name="comics-nav">COMICS</li>
@@ -79,6 +91,7 @@
                         <li class="nav-button" data-name="contact-nav">CONTACT</li>
                     </ul>
                 </div>
+            
             </div>
             
             <img class="header-camera camera-left" src="./assets/images/camera_left.png">
@@ -87,6 +100,11 @@
             <div class="header-low-bar"><!-- Nothing goes here; this bar is for decoration--></div>
         </header>
         <!-- HEADER END -->
+
+        <!-- HAMBURGER -->
+        <div class="flex-full flex-row hamburger">
+            <img class="ham-img" src="./assets/images/hamburger_opened.svg" width="50">
+        </div>
 
 
         <!-- HERO START -->
@@ -153,9 +171,12 @@
                     Nisi, alias possimus praesentium eaque explicabo consectetur. Beatae deserunt voluptate cupiditate consectetur iusto, non aliquid corporis.</p>
 
                     <div class="weekly-events-facebook">
-                        <p>
-                            See more events on <span style="font-weight: 900;">F</span>
-                        </p>
+                        <div class="weekly-events-facebook-text">
+                            See more events on 
+                            <div style="display: inline; position: relative;">
+                                <img src="./assets/images/facebook.svg" width="20" style="display: inline; position: relative; top: 3px; left: 2px;">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -307,6 +328,10 @@
         <!-- TABLE GAMES START -->
         <section id="games-nav" class="table-games">
 
+                <div class="table-games-peice">
+                    <img width="30" src="./assets/images/game_piece.svg">
+                </div>
+
                 <div class="section-title">
                     <h1 class="main-rgb-txt" style="margin-bottom: 2px; text-shadow: 1px 1px rgb(160, 0, 0);">Table Top Games</h1>
                     <div style="height: 4px; background-color: red; width: 180px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto;"></div>
@@ -317,7 +342,7 @@
                     <div class="flex-full flex-row table-games-box"> <!--small shift to row->col -->
                         <div class="flex-full flex-col table-games-item">
                             <div class="flex-full flex-col tg-item-icon">
-                                <div style="width: 120px; height: 120px; border-radius: 50%; background-color: red;"></div>
+                                <img src="./assets/images/board_games.svg" width="120">
                             </div>
                             <div class="flex-full flex-col tg-item-title">
                                 <span style="display: inline-block;">Board Games</span>
@@ -335,7 +360,7 @@
 
                         <div class="flex-full flex-col table-games-item">
                             <div class="flex-full flex-col tg-item-icon">
-                                <div style="width: 120px; height: 120px; border-radius: 50%; background-color: red;"></div>
+                                <img src="./assets/images/mtg.svg" width="120">
                             </div>
                             <div class="flex-full flex-col tg-item-title">
                                 <span style="display: inline-block;">Magic: The Gathering</span>
@@ -355,7 +380,7 @@
                     <div class="flex-full flex-row table-games-box"> <!--small shift to row->col -->
                         <div class="flex-full flex-col table-games-item">
                             <div class="flex-full flex-col tg-item-icon">
-                                <div style="width: 120px; height: 120px; border-radius: 50%; background-color: red;"></div>
+                                <img src="./assets/images/dnd.svg" width="120">
                             </div>
                             <div class="flex-full flex-col tg-item-title">
                                 <span style="display: inline-block;">Dungeons & Dragons</span>
@@ -373,7 +398,7 @@
 
                         <div class="flex-full flex-col table-games-item">
                             <div class="flex-full flex-col tg-item-icon">
-                                <div style="width: 120px; height: 120px; border-radius: 50%; background-color: red;"></div>
+                                <img src="./assets/images/party_games.svg" width="120">
                             </div>
                             <div class="flex-full flex-col tg-item-title">
                                 <span style="display: inline-block;">Party Games</span>
@@ -442,9 +467,8 @@
             <img src="https://via.placeholder.com/110x150">
         </footer>
 
-        <div style="content: ''; background-color: rgb(100,0,0); width: 100%; height: 20px;">
-            <!-- hello -->
-        </div>
+
+        <div style="content: ''; background-color: rgb(100,0,0); width: 100%; height: 20px;"><!-- Nothing goes here; this bar is for decoration--></div>
 
 
     </div> <!-- #wrapper end -->

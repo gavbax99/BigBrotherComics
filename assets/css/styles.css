@@ -150,12 +150,46 @@ body {
     width: 100%;
     height: 100vh;
     position: fixed;
-    z-index: 500;
+    z-index: 1002;
     background-color: rgb(82, 82, 82);
-    transition: all 1s cubic-bezier(.75, 0, .78, .38); 
-    -webkit-transition: all 1s cubic-bezier(.75, 0, .78, .38); 
-    -moz-transition: all 1s cubic-bezier(.75, 0, .78, .38); 
+    transition: all 0.5s cubic-bezier(.75, 0, .78, .38); 
+    -webkit-transition: all 0.5s cubic-bezier(.75, 0, .78, .38); 
+    -moz-transition: all 0.5s cubic-bezier(.75, 0, .78, .38); 
 }
+
+/* 2. **************         NAV OVERLAY         ****************** */
+/* *********************************************************** */
+
+.nav-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    opacity: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1004;
+}
+
+.nav-ul {
+    color: #fff;
+    font-size: 34px;
+}
+
+.nav-overlay li {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-overlay a {
+    transition: .3s;
+}
+
 
 /* 2. **************         HEADER         ****************** */
 /* *********************************************************** */
@@ -164,21 +198,21 @@ header {
     position: fixed;
     width: 1440px;
     top: 0;
-    z-index: 999;
+    z-index: 1003;
 }
 
 .header-preloader {
-    z-index: 9999;
+    z-index: 1006;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 1;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .header-bb-title {
-    padding-left: 6px;
+    padding-left: 8px;
     color: #fff;
     font-size: 18px;
     text-shadow: 1px 1px rgb(160, 0, 0);
@@ -264,6 +298,19 @@ header {
     transition: .3s;
     cursor: pointer;
 }
+
+.hamburger {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+    z-index: 9999;
+    padding: 10px;
+    transition: .5s;
+}
+
 
 
 /* 3. **************          HERO          ****************** */
@@ -382,7 +429,7 @@ header {
 .weekly-superman {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -1px;
     transform: translate(-50%, 0);
 }
 
@@ -402,7 +449,7 @@ header {
     margin: 0 auto;
 }
 
-.weekly-events-facebook p {
+.weekly-events-facebook-text {
     margin: 0 auto;
     text-align: center;
     color: #fff;
@@ -511,7 +558,7 @@ header {
     text-align: center;
     top: 50%;
     cursor: pointer;
-    z-index: 99;
+    z-index: 1001;
     transform: translate(0, -50%);
 }
 
@@ -573,7 +620,7 @@ header {
     position: relative;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    padding: 60px;
+    padding: 60px 60px 80px 60px;
 }
 
 .table-games-container {
@@ -635,6 +682,13 @@ header {
 
 .tg-item-list ul li:last-of-type {
     margin-bottom: 0px;
+}
+
+.table-games-peice {
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transform: translate(-50%, 0);
 }
 
 
@@ -810,7 +864,7 @@ footer {
         color: rgb(160,0,0);
     }
 
-    .weekly-events-facebook:hover p {
+    .weekly-events-facebook:hover .weekly-events-facebook-text {
         background-color: rgb(160, 0, 0);
     }
 
@@ -944,8 +998,12 @@ footer {
         width: 100%;
     }
 
-    .nav {
+    .nav-hider {
         display: none;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 
@@ -1010,7 +1068,7 @@ footer {
     }
 
     .table-games {
-        padding: 40px 30px 20px 30px
+        padding: 40px 30px 50px 30px
     }
 
     .tg-item-list {
