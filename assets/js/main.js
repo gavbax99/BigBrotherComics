@@ -49,6 +49,11 @@ $(document).ready(function(){
         }
     });
 
+    var dt = new Date();
+    var year = dt.getFullYear();
+
+    $(".footer-text span").text(year);
+
     // ========= INJECTIONS =========
 
     // Main body injection
@@ -73,5 +78,5 @@ $(window).on("load", function() {
     $("body").css("overflow", "auto");
     setTimeout(function(){ 
         $(".header-preloader").css("display", "none");
-    }, 500);
+    }, 400);
 });

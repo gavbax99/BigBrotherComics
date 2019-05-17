@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
+<!-- BIG BROTHER IS WATCHING YOU -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +36,9 @@
 
         <!-- PRELOADER START -->
         <div class="flex-full flex-col preloader">
-            <div style="width:50px; height: 50px; background-color: red;"></div>
+            <div class="flex-full flex-col preloader-content">
+                <img src="./assets/images/loading_pacman_white.png">
+            </div>
         </div>
         <!-- PRELOADER END -->
 
@@ -39,7 +50,7 @@
                 <li class="nav-button" data-name="comics-nav">COMICS</li>
                 <li class="nav-button" data-name="games-nav">TABLE TOP GAMES</li>
                 <li class="nav-button" data-name="contact-nav">CONTACT</li>
-                <li style="margin-bottom: 0 !important;"><img src="./assets/images/facebook.svg" width="35" style="display: inline;"></li>
+                <a target="_blank" href="https://www.facebook.com/BigBrotherComics/"><li style="margin-bottom: 0 !important;"><img src="./assets/images/facebook.svg" width="35" style="display: inline;"></li></a>
             </ul>
         </div>
         <!-- HAM NAV END -->
@@ -166,30 +177,38 @@
 
             <div class="flex-full flex-row weekly-events-section">
                 <div class="weekly-events-description font-p">
-                    <p style="margin-bottom: 35px;">Big Brother Comics hosts weekly events. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus deleniti natus neque magnam totam. <br><br>
+                    <p>Big Brother Comics hosts weekly events. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus deleniti natus neque magnam totam. <br><br>
                     
                     Nisi, alias possimus praesentium eaque explicabo consectetur. Beatae deserunt voluptate cupiditate consectetur iusto, non aliquid corporis.</p>
 
-                    <div class="weekly-events-facebook">
-                        <div class="weekly-events-facebook-text">
-                            See more events on 
-                            <div style="display: inline; position: relative;">
-                                <img src="./assets/images/facebook.svg" width="20" style="display: inline; position: relative; top: 3px; left: 2px;">
+                    <a target="_blank" href="https://www.facebook.com/pg/BigBrotherComics/events/">
+                        <div class="weekly-events-facebook">
+                            <div class="weekly-events-facebook-text">
+                                See more events on 
+                                <div style="display: inline; position: relative;">
+                                    <img src="./assets/images/facebook.svg" width="20" style="display: inline; position: relative; top: 4px; left: 2px;">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="weekly-events-list-contaniner">
+                    <!-- Slick nav buttons -->
                     <div class="events-button events-prev"><i class="fas fa-caret-left"></i></div>
                     <div class="events-button events-next"><i class="fas fa-caret-right"></i></div>
 
-                    <!-- Slick start -->
+                    <!-- Slick slider start -->
                     <div class="weekly-events-list">
+
+                        <!-- Slides are called "singles" -->
+                        <!-- Add or remove singles as needed, just change the day/title/list content - Slick will figure out the rest -->
+                        <!-- one important change is where the image url is stored - in the ".events-{day}-img" class in our CSS file -->
 
                         <!-- Single Start -->
                         <div class="flex-full flex-col weekly-events-single">
-                            <div class="weekly-events-single-img events-commander">
+                            <!-- ".events-wednesday-img" controls the URL of the image; to create a new slide, make a new class and assign it your image -->
+                            <div class="weekly-events-single-img events-wednesday-img">
                                 <div class="weekly-events-img-date">Wednesdays</div>
                             </div>
                             <div class="flex-full flex-col weekly-events-single-description">
@@ -207,7 +226,7 @@
 
                         <!-- Single Start -->
                         <div class="flex-full flex-col weekly-events-single">
-                            <div class="weekly-events-single-img events-2">
+                            <div class="weekly-events-single-img events-thursday-img">
                                 <div class="weekly-events-img-date">Thursdays</div>
                             </div>
                             <div class="flex-full flex-col weekly-events-single-description">
@@ -225,7 +244,7 @@
 
                         <!-- Single Start -->
                         <div class="flex-full flex-col weekly-events-single">
-                            <div class="weekly-events-single-img events-3">
+                            <div class="weekly-events-single-img events-friday-img">
                                 <div class="weekly-events-img-date">Fridays</div>
                             </div>
                             <div class="flex-full flex-col weekly-events-single-description">
@@ -242,13 +261,14 @@
                         </div>
                         <!-- Single End -->
                             
-                        <!-- Single Start -->
+                        <!-- Single (TWO COLUMN) Start -->
                         <div class="flex-full flex-col weekly-events-single">
-                            <div class="weekly-events-single-img events-4">
+                            <div class="weekly-events-single-img events-saturday-img">
                                 <div class="weekly-events-img-date">Saturdays</div>
                             </div>
                             <div class="flex-full flex-row weekly-events-saturday-description">
 
+                                <!-- First column -->
                                 <div class="flex-full flex-col saturday-event saturday-left">
                                     <h3 style="margin-bottom: 8px;">Standard Showdown</h3>
                                     <ul class="weekly-event-ul">
@@ -260,6 +280,7 @@
                                     </ul>
                                 </div>
 
+                                <!-- Second column right aligned on large screens -->
                                 <div class="flex-full flex-col saturday-event saturday-right saturday-right-desktop">
                                     <h3 style="margin-bottom: 8px;">Board Game Night</h3>
                                     <ul class="weekly-event-ul">
@@ -272,8 +293,9 @@
                                     </ul>
                                 </div>
 
+                                <!-- Second column goes under the first column and becomes left aligned on small screens/mobile -->
                                 <div class="flex-full flex-col saturday-event saturday-left saturday-right-mobile" style="margin-bottom: 0 !important;">
-                                    <h3 style="margin-bottom: 8px;">Standard Showdown</h3>
+                                    <h3 style="margin-bottom: 8px;">Board Game Night</h3>
                                     <ul class="weekly-event-ul">
                                         <li><i class="fas fa-angle-right" style="padding-right: 5px;"></i>4:00PM - 8:00PM</li>
                                         <li><i class="fas fa-angle-right" style="padding-right: 5px;"></i>Free to enter</li>
@@ -285,10 +307,10 @@
 
                             </div>
                         </div>
-                        <!-- Single End --> 
+                        <!-- Single (TWO COLUMN) End --> 
 
                     </div>
-                    <!-- Slick end -->
+                    <!-- Slick slider end -->
 
                 </div>
             </div>            
@@ -463,15 +485,26 @@
         <!-- CONTACT END -->
 
 
-        <footer>
-            <img src="https://via.placeholder.com/110x150">
+        <!-- FOOTER START -->
+        <footer class="flex-full flex-row footer-class">
+            
+            <div class="flex-full flex-col footer-text-section">
+                <!-- Year automatically injected from JS -->
+
+                <div class="footer-text">© BIG BROTHER COMICS <span>XXXX</span>
+                    <div style="width: 145px; height: 2px; background-color: #fff; margin-top: 3px; box-shadow: 1px 1px #181818;"></div>
+                </div>
+            </div>
+
+            <img src="./assets/images/bb_logo_white_full.svg" width="50">
+            
+            <div class="footer-console">
+                <img src="./assets/images/bigbrother.png" width="40">
+            </div>
         </footer>
+        <!-- FOOTER END -->
 
-
-        <div style="content: ''; background-color: rgb(100,0,0); width: 100%; height: 20px;"><!-- Nothing goes here; this bar is for decoration--></div>
-
-
-    </div> <!-- #wrapper end -->
+    </div> <!-- wrapper end -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./assets/js/slick.js"></script>
