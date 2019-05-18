@@ -23,7 +23,13 @@ $(document).ready(function(){
     $(".nav-button").on("click", function () {
         var data = $(this).attr("data-name");
         var navCheck = $(".nav-overlay").css("opacity");
-        $('html,body').animate({ scrollTop: $(`#${data}`).offset().top - 85 }, 400);
+
+        if  ($(window).width() > 768) {
+            $('html,body').animate({ scrollTop: $(`#${data}`).offset().top - 85 }, 400);
+        } else {
+            $('html,body').animate({ scrollTop: $(`#${data}`).offset().top - 60 }, 400);
+        }
+
         if (navCheck > 0) {
             $(".ham-img").attr("src", "./assets/images/hamburger_opened.svg");
             $(".nav-overlay").animate({ opacity: 0 }, 300);
@@ -53,6 +59,70 @@ $(document).ready(function(){
     var year = dt.getFullYear();
 
     $(".footer-text span").text(year);
+
+
+    // CONSOLE COMMAND
+
+    var consoleIsOn = false;
+
+    function runConsole(input) {
+        if (input.indexOf("SCRIPT") >= 0) {
+            alert("NO SCRIPTS >:(");
+            $(".console-text").val("");
+            return;
+        } else if (input.indexOf("GAVIN") >= 0) {
+            alert("GAVIN IS GREAT");
+            $(".console-text").val("");
+            return;
+        } else if (input.indexOf("KENNY") >= 0) {
+            alert("KENNY IS GREAT");
+            $(".console-text").val("");
+            return;
+        } else if (input == "BIG BROTHER IS WATCHING YOU") {
+            alert("BIG BROTHER IS WATCHING YOU");
+            $(".console-text").val("");
+            return;
+        } else if (input == "I LOVE COMICS") {
+            $("*").css("font-family", "comicSans");
+            alert("Don't we all!");
+            $(".console-text").val("");
+            return;
+        } else if (input == "") {
+            alert("INPUT COMMAND");
+            return;
+        } else {
+            alert("UNKNOWN COMMAND")
+            $(".console-text").val("");
+            return;
+        }
+    };
+
+    $(".console-button").on("click", function () {
+        var textHold = $(".console-text").val().toUpperCase().trim();
+        textHold = textHold.replace(/\s\s+/g, ' ');
+        runConsole(textHold);
+    });
+
+    $(".console-text").on('keypress', function (e) {
+        if(e.which == 13) {
+            var textHold = $(".console-text").val().toUpperCase().trim();
+            textHold = textHold.replace(/\s\s+/g, ' ');
+            runConsole(textHold);
+        }
+    });
+
+    // $(document).on('keypress', function (e) {
+    //     if(e.which == 13) {
+    //         alert('You pressed enter!');
+    //     }
+    // });
+
+
+
+
+
+
+
 
     // ========= INJECTIONS =========
 

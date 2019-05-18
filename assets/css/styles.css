@@ -67,6 +67,8 @@ p{margin-block-start: 0; margin-block-end: 0;}
 /* *********************************************************** */
 
 @font-face {font-family: myFont; src: url("../font/big_noodle_titling.ttf");}
+@font-face {font-family: console; src: url("../font/terminal.ttf");}
+@font-face {font-family: comicSans; src: url("../font/comic_sans.TTF");}
 
 .clearfix::after{content: ""; display: block; clear: both;}
 
@@ -150,7 +152,7 @@ body {
     width: 100%;
     height: 100vh;
     position: fixed;
-    z-index: 1002;
+    z-index: 1003;
     background-color: #3a3a3a;
     transition: all 0.4s cubic-bezier(.75, 0, .78, .38); 
     -webkit-transition: all 0.4s cubic-bezier(.75, 0, .78, .38); 
@@ -184,7 +186,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1004;
+    z-index: 1005;
 }
 
 .nav-ul {
@@ -211,7 +213,7 @@ header {
     position: fixed;
     width: 1440px;
     top: 0;
-    z-index: 1003;
+    z-index: 1004;
 }
 
 .header-preloader {
@@ -222,6 +224,21 @@ header {
     left: 0;
     opacity: 1;
     transition: 0.4s;
+}
+
+.header-preloader-bar {
+    height: 70px;
+    background-color: rgb(255, 0, 0);
+    justify-content: flex-start;
+}
+
+.header-preloader-logo {
+    padding: 0 20px;
+    height: 100%;
+}
+
+.header-preloader-logo img {
+    height: 50px;
 }
 
 .header-bb-title {
@@ -262,10 +279,17 @@ header {
     right: -20px;
 }
 
-.header-bb-logo, .header-bb-logo img {
+.header-bb-logo{
+    padding: 0px 20px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.header-bb-logo img {
     position: relative;
     transition: .3s;
-    cursor: pointer;
+    height: 50px;
 }
 
 .trapezoid-left {
@@ -325,6 +349,9 @@ header {
     transition: .5s;
 }
 
+.ham-img {
+    width: 50px;
+}
 
 
 /* 3. **************          HERO          ****************** */
@@ -818,6 +845,87 @@ header {
 }
 
 
+/* X. ***************       CONSOLE       ****************** */
+/* *********************************************************** */
+
+.console-container {
+    position: fixed;
+    max-width: 576px;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    background-color: red;
+    box-shadow: 0 0 10px rgba(100,100,100,.3);
+    font-family: console;
+    z-index: 1002;
+}
+
+.console-form {
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.console-form :focus {
+    outline: none;
+    outline-width: 0;
+}
+
+.console-form ::placeholder {
+    color: rgb(46, 230, 0);
+    opacity: .5;
+}
+
+.console-text {
+    height: 100%;
+    width: 86.5%;
+    padding: 0 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(46, 230, 0);
+    background-color: rgb(39, 39, 39);
+    border-color: #676767;
+}
+
+.console-button {
+    height: 100%;
+    width: 12%;
+    background-color: rgb(160,0,0);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border-color: rgb(160,0,0);
+}
+
+.console-side-box {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 22px;
+}
+
+.console-side-box-left {
+    left: -30px;
+}
+
+.console-side-box-right {
+    right: -30px;
+}
+
+.console-side-box-left img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
 /* Y. ***************       OVERRIDES       ****************** */
 /* *********************************************************** */
 
@@ -1046,6 +1154,53 @@ header {
     .hamburger {
         display: flex;
     }
+
+    /* NAV SHRINK */
+
+    .header-hi-bar {
+        height: 50px;
+    }
+
+    .header-low-bar {
+        height: 10px;
+    }
+
+    .hamburger {
+        padding: 5px;
+    }
+
+    .header-bb-logo{
+        padding: 0px 15px;
+    }
+
+    .header-bb-logo img {
+        height: 40px;
+    }
+
+    .header-bb-title {
+        font-size: 15px;
+    }
+
+    .ham-img {
+        width: 40px;
+    }
+
+    .hero {
+        margin-top: 60px;
+    }
+
+    .header-preloader-bar {
+        height: 50px;
+    }
+
+    .header-preloader-logo {
+        padding: 0 15px;
+    }
+    
+    .header-preloader-logo img {
+        height: 40px;
+    }
+    
 }
 
 
@@ -1122,6 +1277,14 @@ header {
 
     .contact {
         padding: 40px 30px 30px 30px;
+    }
+
+    .console-text {
+        padding: 0 10px;
+    }
+
+    .console-container {
+        border-radius: 0;
     }
 }
 
