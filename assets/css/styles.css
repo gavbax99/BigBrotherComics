@@ -658,6 +658,14 @@ header {
     display: block;
 }
 
+.new-releases-hidden-text {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 20px;
+    color: rgb(240,240,240);
+}
+
 
 /* 4. ***************       TABLE GAMES       ****************** */
 /* *********************************************************** */
