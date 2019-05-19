@@ -119,6 +119,12 @@ $(document).ready(function(){
         }
     });
 
+    // Hides "Message Sent!" if sending multiple messages
+    $(".input-submit").on("click", function () {
+        $("#message-sent").css("display", "none");
+    });
+    
+
     // ========= CAMERA INTERVAL =========
 
     // setInterval(function() {

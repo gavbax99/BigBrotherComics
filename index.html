@@ -450,20 +450,63 @@
 
                 <div class="section-title" style="margin-bottom: 20px !important;">
                     <h1 class="main-rgb-txt" style="margin-bottom: 2px; text-shadow: 1px 1px rgb(160, 0, 0);">Contact</h1>
-                    <div style="height: 4px; background-color: red; width: 100px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto;"></div>
+                    <!-- <div style="height: 4px; background-color: red; width: 100px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto;"></div> -->
                 </div>
 
-                <div class="flex-full flex-col contact-info">
+                <div class="flex-full flex-row contact-info">
 
-                    <div class="contact-numbers">
-                        <ul class="flex-full flex-row contact-numbers-list">
-                            <li>0 916 420 6376</li>
-                            <li>0 bigbrothercomics@gmail.com</li>
-                            <li>0 BB on Facebook</li>
+                    <div class="flex-full flex-col contact-numbers">
+                        <div class="contact-info-headline" style="letter-spacing: 1px;">Data</div>
+                        <div class="contact-info-underline"></div>
+
+                        <ul class="flex-full flex-col contact-numbers-list mont">
+                            
+                            <a href="tel:916-441-6461"><li class="flex-full flex-row cn-li">
+                                <img class="contact-icon ci-mobile" src="./assets/images/contact_phone.svg">
+                                (916) 441 6461 
+                                <img class="contact-icon ci-desktop" src="./assets/images/contact_phone.svg">
+                            </li></a>
+                            <a href="mailto:bigbrothercomics@gmail.com"><li class="flex-full flex-row cn-li">
+                                <img class="contact-icon ci-mobile" src="./assets/images/contact_email.svg">
+                                bigbrothercomics@gmail.com 
+                                <img class="contact-icon ci-desktop" src="./assets/images/contact_email.svg">
+                            </li></a>
+                            <a target="_blank" href="https://www.facebook.com/pg/BigBrotherComics/"><li class="flex-full flex-row cn-li" style="padding-bottom: 0 !important;">
+                                <img class="contact-icon ci-mobile" src="./assets/images/contact_facebook.svg">
+                                Big Brother on Facebook 
+                                <img class="contact-icon ci-desktop" src="./assets/images/contact_facebook.svg">
+                            </li></a>
                         </ul>
                     </div>
 
-                    <div class="contact-hours">
+                    <div class="flex-full flex-col contact-hours">
+                        <div class="contact-info-headline">Hours</div>
+                        <div class="contact-info-underline"></div>
+
+                        <div class="flex-full flex-row contact-hours-day-container">
+                            <div>
+                                <ul class="flex-full flex-col contact-hours-list-week mont">
+                                    <li><span class="contact-hours-list-day">M</span></li>
+                                    <li><span class="contact-hours-list-day">T</span></li>
+                                    <li><span class="contact-hours-list-day">W</span></li>
+                                    <li><span class="contact-hours-list-day">Th</span></li>
+                                    <li><span class="contact-hours-list-day">F</span></li>
+                                    <li><span class="contact-hours-list-day">S</span></li>
+                                    <li><span class="contact-hours-list-day">Su</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="flex-full flex-col contact-hours-list-times mont">
+                                    <li>. . . . . . &nbsp;11am - 8pm</li>
+                                    <li>. . . . . . &nbsp;11am - 8pm</li>
+                                    <li>. . . . . . &nbsp;11am - 10pm</li>
+                                    <li>. . . . . . &nbsp;11am - 10pm</li>
+                                    <li>. . . . . . &nbsp;11am - 10pm</li>
+                                    <li>. . . . . . &nbsp;11am - 8pm</li>
+                                    <li>. . . . . . &nbsp;11am - 6pm</li>
+                                </ul>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -480,11 +523,46 @@
                     </div>
 
 
-                    <div class="flex-full flex-col contact-form-container"></div>
+                    <div class="flex-full flex-col contact-form-container">
+                        <form id="gform" class="gform clearfix" method="POST" action="https://script.google.com/macros/s/AKfycbw4UxWYM3MK9aP2APOE68dsblRGHmGClFACk3aryQ/exec">
+
+                            <input id="input-name" name="name" class="input-little input-name-fix" type="text" required="true" placeholder="Name*">
+                            <input id="input-email" name="email" class="input-little" type="text" required="true" placeholder="Email*">
+                            <textarea id="input-message" name="message" class="input-big" rows="12" required="true" type="text" placeholder="Message*"></textarea>
+                            <input type="submit" value="Send Message" class="input-submit">
+                            <div class="loading-message" style="display:none;"></div>
+                            <div id="message-sent" class="ty-margin thankyou_message" style="display:none;">
+                                Message sent!
+                            </div>
+    
+                        </form>
+                    </div>
+
+
 
                 </div>
         </section>
         <!-- CONTACT END -->
+
+    
+        <!-- CONSOLE START -->
+        <div class="flex-full flex-row console-container">
+
+            <form onSubmit="return false;" class="flex-full flex-row console-form">
+                <input class="console-text" type="text" name="text" maxlength="54" placeholder="ENTER COMMAND">
+                <input class="console-button" type="button" name="button" value="RUN">
+            </form>
+
+            <!-- COLOR TRIANGLES -->
+            <div class="console-side-box console-side-box-left">
+                <img src="./assets/images/console_triangle.svg" width="30">
+            </div>
+            <div class="console-side-box console-side-box-right">
+                <img src="./assets/images/console_triangle.svg" width="30">
+            </div>
+
+        </div>
+        <!-- CONSOLE END -->
 
 
         <!-- FOOTER START -->
@@ -522,42 +600,17 @@
         </footer>
         <!-- FOOTER END -->
 
-
         <div class="console-padding">
             <div style="height: 50%; width: 100%;"></div>
             <div style="height: 50%; width: 100%; background-color: rgb(28,28,28);"></div>
         </div>
-
-
-        <!-- CONSOLE START -->
-        <div class="flex-full flex-row console-container">
-
-            <form onSubmit="return false;" class="flex-full flex-row console-form">
-                <input class="console-text" type="text" name="text" maxlength="54" placeholder="ENTER COMMAND">
-                <input class="console-button" type="button" name="button" value="RUN">
-            </form>
-
-            <!-- <div class="console-button">
-
-            </div> -->
-
-            <!-- COLOR TRIANGLES -->
-            <div class="console-side-box console-side-box-left">
-                <img src="./assets/images/console_triangle.svg" width="30">
-            </div>
-            <div class="console-side-box console-side-box-right">
-                <img src="./assets/images/console_triangle.svg" width="30">
-            </div>
-
-        </div>
-        <!-- CONSOLE END -->
-
 
     </div> <!-- wrapper end -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./assets/js/slick.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="assets/javascript/gform-custom-send.js"></script>
 
 </body>
 

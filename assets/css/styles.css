@@ -757,23 +757,96 @@ header {
 }
 
 .contact-info {
-    margin-bottom: 30px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    margin-bottom: 32px;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .contact-numbers {
-    
+    width: 48%;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.contact-hours {
+    width: 48%;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.contact-info-headline {
+    text-transform: uppercase;
+    font-size: 34px;
+    letter-spacing: .5px;
+    word-spacing: 1px;
+    color: red;
+    text-shadow: 1px 1px rgb(160, 0, 0);
+}
+
+
+.contact-info-underline {
+    height: 3px;
+    background-color: red;
+    width: 40px;
+    box-shadow: 1px 1px rgb(160, 0, 0);
+    margin-top: 3px;
+    margin-bottom: 18px;
 }
 
 .contact-numbers-list {
-    font-size: 28px;
+    font-size: 16px;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.contact-icon {
+    width: 28px;
+    display: inline;
+    transition: 0.7s;
+}
+
+.ci-mobile {
+    display: none;
+    margin-right: 10px;
+}
+
+.ci-desktop {
+    margin-left: 10px;
+}
+
+.contact-hours-list-week {
+    font-size: 14px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.contact-hours-list-times {
+    font-size: 14px;
+    text-align: left;
+    align-items: flex-start;
+    width: 100%;
+    letter-spacing: 1px;
 }
 
 .contact-numbers-list li {
-    padding: 0 20px;
-    text-shadow: 0.5px 0.5px rgb(160, 0, 0);
+    padding-bottom: 12px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.contact-hours-list li, .contact-hours-list-times li, .contact-hours-list-week li {
+    padding-bottom: 2px;
+}
+
+.contact-hours-list li:last-of-type, .contact-hours-list-times li:last-of-type, .contact-hours-list-week li:last-of-type {
+    padding-bottom: 0;
+}
+
+.contact-hours-list-day {
+    font-weight: 600;
     color: red;
+    text-shadow: 1px 1px rgb(160, 0, 0);
 }
 
 .contact-section {
@@ -781,14 +854,19 @@ header {
     align-items: flex-start;
 }
 
+.cn-li {
+    transition: .7s;
+}
+
 .map-container {
     width: 48%;
-    height: 400px;
+    height: 352px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    box-shadow: 0 5px 15px rgba(39, 39, 39, .15);
+    box-shadow: 0 5px 15px rgba(39, 39, 39, .1);
+    border: 1px solid rgba(100,100,100,.1);
     overflow: hidden;
     border-radius: 5px;
 }
@@ -796,14 +874,14 @@ header {
 .mapouter {
     flex: 1;
     width: 100%;
-    height: 400px;
+    height: 352px;
     position: relative;
     text-align: left;
 }
 
 .gmap_canvas {
     width: 100%;
-    height: 400px;
+    height: 352px;
     position: relative;
     background: none !important;
     overflow: hidden;
@@ -811,15 +889,88 @@ header {
 
 .iframe-width {
     width: 100%;
-    height: 400px;
+    height: 352px;
 }
+
+/* MESSAGE FORM */
 
 .contact-form-container {
     width: 48%;
-    height: 400px;
-    background-color: #fff;
-
+    justify-content: flex-start;
 }
+
+.gform {
+    width: 100%;
+}
+
+#input-name {
+    float: left;
+}
+
+#input-email {
+    float: right;
+}
+
+#input-message {
+    margin-top: 26px;
+    float: left;
+}
+
+.input-little {
+    font-size: 16px;
+    width: 47.5%;
+    padding: 10px 16px;
+    border: 1px solid rgba(100,100,100,.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-big {
+    font-size: 16px;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(100,100,100,.3);
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-submit {
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: red;
+    border-radius: 4px;
+    color: #fff;
+    float: left;
+    margin-top: 26px;
+    cursor: pointer !important;
+    font-family: 'Montserrat', sans-serif;
+    border-width: 0px;
+    border-style: none;
+    border-image: none;
+    border-bottom: 2px solid rgb(160,0,0);
+    border-right: 2px solid rgb(160,0,0);
+    transition: .7s ease;
+}
+
+.loading-message {
+    left: 24px;
+    top: 36px;
+    position: relative;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    background-image: linear-gradient(red, rgb(160,0,0));
+    float: left;
+    -webkit-animation: rotation 1s infinite linear;
+}
+
+.ty-margin {
+    font-size: 17px;
+    float: left;
+    font-weight: bold;
+    padding-top: 22px;
+    padding-left: 20px;
+}
+
 
 /* X. ***************       FOOTER       ****************** */
 /* *********************************************************** */
@@ -1097,6 +1248,16 @@ header {
     .footer-console:hover {
         bottom: -5px;
     }
+
+    .cn-li:hover {
+        color: red;
+    }
+
+    .cn-li:hover > img {
+        transform: scale(1.3, 1.3);
+        -ms-transform: scale(1.3, 1.3);
+        -webkit-transform: scale(1.3, 1.3);
+    }
 }
 
 @media only screen and (max-width: 1440px) { 
@@ -1221,6 +1382,98 @@ header {
 
     .hamburger {
         display: flex;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 240px;
+        margin-bottom: 32px;
+    }
+
+    .mapouter {
+        height: 240px;
+    }
+
+    .gmap_canvas {
+        height: 240px;
+    }
+    
+    .iframe-width {
+        height: 240px;
+    }
+
+    .contact-form-container {
+        width: 100%;
+    }
+
+    #input-email {
+        float: left;
+    }
+
+    .input-little {
+        width: 100%;
+    }
+
+    #input-name {
+        margin-bottom: 6px
+    }
+
+    #input-message {
+        margin-top: 6px;
+    }
+
+    .input-submit {
+        margin-top: 24px;
+    }
+
+    .loading-message {
+        top: 21px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-hours {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-numbers {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+
+    .contact-numbers-list {
+        align-items: center;
+    }
+
+    .contact-numbers-list li {
+        padding-bottom: 8px;
+    }
+
+    .contact-hours-list-times, .contact-hours-list-week {
+        font-size: 16px;
+    }
+
+    .contact-icon {
+        width: 26px;
+    }
+
+    .ci-mobile {
+        display: inline;
+    }
+
+    .ci-desktop {
+        display: none;
     }
 
     /* NAV SHRINK */
