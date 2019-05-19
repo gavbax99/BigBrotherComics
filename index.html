@@ -105,8 +105,8 @@
             
             </div>
             
-            <img class="header-camera camera-left" src="./assets/images/camera_left.png">
-            <img class="header-camera camera-right" src="./assets/images/camera_right.png">
+            <img class="header-camera camera-left" src="./assets/images/camera.gif">
+            <img class="header-camera camera-right" src="./assets/images/camera.gif">
 
             <div class="header-low-bar"><!-- Nothing goes here; this bar is for decoration--></div>
         </header>
@@ -491,12 +491,28 @@
             <div class="flex-full flex-col footer-text-section">
                 <!-- Year automatically injected from JS -->
 
-                <div class="footer-text">© BIG BROTHER COMICS <span>XXXX</span>
-                    <div style="width: 145px; height: 2px; background-color: #fff; margin-top: 3px; box-shadow: 1px 1px #181818;"></div>
+                <div class="footer-text">
+                    <div>© BIG BROTHER COMICS <span>XXXX</span></div>
+                    <div style="width: 145px; height: 2px; background-color: #fff; margin-top: 2px; box-shadow: 1px 1px #181818;"></div>
+                    <div class="footer-about-bb mont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia exercitationem ullam sequi provident deserunt animi vero here repudiandae cum eaque. Id est odio maiores sequi deserunt re excepturi tempore suscipit itaque repellendus. This is some more text because we need to fill another line. </div>
                 </div>
             </div>
 
-            <img src="./assets/images/bb_logo_white_full.svg" width="50">
+            <div class="flex-full flex-row footer-logo">
+                <div class="flex-full flex-col footer-contact">
+                    <a href="tel:916-441-6461">
+                        <div class="footer-phone mont">916 441 6461</div>
+                    </a>
+                    <a target="_blank" href="https://www.facebook.com/pg/BigBrotherComics/">
+                        <div class="flex-full flex-row footer-facebook mont">
+                            Facebook&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img class="footer-fb-logo" src="./assets/images/facebook_f.svg">
+                        </div>
+                    </a>
+                </div>
+
+                <img class="footer-bb-logo" src="./assets/images/bb_logo_white_full.svg">
+            </div>
             
             <div class="footer-console">
                 <img src="./assets/images/bigbrother.png" width="40">
@@ -505,11 +521,17 @@
         <!-- FOOTER END -->
 
 
+        <div class="console-padding">
+            <div style="height: 50%; width: 100%;"></div>
+            <div style="height: 50%; width: 100%; background-color: rgb(28,28,28);"></div>
+        </div>
+
+
         <!-- CONSOLE START -->
         <div class="flex-full flex-row console-container">
 
             <form onSubmit="return false;" class="flex-full flex-row console-form">
-                <input class="console-text" type="text" name="text" maxlength="50" placeholder="INPUT COMMAND">
+                <input class="console-text" type="text" name="text" maxlength="54" placeholder="ENTER COMMAND">
                 <input class="console-button" type="button" name="button" value="RUN">
             </form>
 

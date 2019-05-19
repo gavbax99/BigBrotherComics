@@ -307,18 +307,19 @@ header {
 }
 
 .header-camera {
-    display: none;
     position: absolute;
     top: 75px;
-    width: 45px;
+    width: 60px;
 }
 
 .camera-left {
-    left: 9px;
+    left: 10px;
 }
 
 .camera-right {
-    right: 9px;
+    right: 10px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .nav {
@@ -817,10 +818,11 @@ header {
 
 .footer-class {
     justify-content: space-between;
+    align-items: flex-start;
     position: relative;
     width: 100%;
     background-color: #3a3a3a;
-    padding: 40px 80px;
+    padding: 40px 80px 50px 80px;
     color: #fff;
 }
 
@@ -844,6 +846,56 @@ header {
     text-shadow: 1px 1px #181818;
 }
 
+.footer-about-bb {
+    font-size: 11px; 
+    padding-top: 6px;
+    max-width: 420px;
+    padding-right: 50px;
+    line-height: 12px;
+}
+
+.footer-logo {
+    align-items: flex-start;
+}
+
+.footer-bb-logo {
+    width: 70px;
+    margin-left: 8px;
+}
+
+.footer-fb-logo {
+    position: absolute;
+    width: 8px;
+    top: 5px;
+    right: 18px;
+}
+
+.footer-contact {
+    align-items: flex-end;
+}
+
+.footer-phone {
+    white-space: nowrap;
+    padding: 8px 18px;
+    background-color: red;
+    border-radius: 3px;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(160,0,0);
+    border-right: 2px solid rgb(160,0,0);
+}
+
+.footer-facebook {
+    position: relative;
+    margin-top: 8px;
+    width: 112px;
+    height: 30px;
+    border-radius: 3px;
+    font-weight: 600;
+    background-color: red;
+    border-bottom: 2px solid rgb(160,0,0);
+    border-right: 2px solid rgb(160,0,0);
+}
+
 
 /* X. ***************       CONSOLE       ****************** */
 /* *********************************************************** */
@@ -853,7 +905,7 @@ header {
     max-width: 576px;
     width: 100%;
     height: 50px;
-    bottom: 0;
+    bottom: -50px;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 10px;
@@ -861,6 +913,7 @@ header {
     background-color: red;
     box-shadow: 0 0 10px rgba(100,100,100,.3);
     font-family: console;
+    transition: .7s;
     z-index: 1002;
 }
 
@@ -925,6 +978,13 @@ header {
     transform: scaleX(-1);
 }
 
+.console-padding {
+    position: relative;
+    width: 100%;
+    height: 0;
+    transition: .7s;
+    background-color: #3a3a3a;
+}
 
 /* Y. ***************       OVERRIDES       ****************** */
 /* *********************************************************** */
@@ -1285,6 +1345,49 @@ header {
 
     .console-container {
         border-radius: 0;
+    }
+
+    .footer-class {
+        padding: 34px 30px 40px 30px;
+    }
+
+    .footer-about-bb {
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .footer-class {
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        width: 100%;
+    }
+
+    .footer-about-bb {
+        padding-right: 0;
+        padding-bottom: 24px;
+        padding-top: 8px;
+    }
+
+    .footer-contact {
+        width: 100%;
+    }
+
+    .footer-contact a {
+        width: 100%;
+    }
+
+    .footer-facebook {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0 0 0 17px;
+    }
+
+    .footer-fb-logo {
+        left: 84px;
+        right: auto;
     }
 }
 

@@ -63,8 +63,6 @@ $(document).ready(function(){
 
     // CONSOLE COMMAND
 
-    var consoleIsOn = false;
-
     function runConsole(input) {
         if (input.indexOf("SCRIPT") >= 0) {
             alert("NO SCRIPTS >:(");
@@ -88,7 +86,7 @@ $(document).ready(function(){
             $(".console-text").val("");
             return;
         } else if (input == "") {
-            alert("INPUT COMMAND");
+            alert("ENTER COMMAND");
             return;
         } else {
             alert("UNKNOWN COMMAND")
@@ -96,6 +94,16 @@ $(document).ready(function(){
             return;
         }
     };
+
+    $(".footer-console").on("click", function () {
+        $(this).css("opacity", "0");
+        $(".console-padding").css("height", "40px");
+        $(".console-container").css("bottom", "0");
+        $('html,body').animate({ scrollTop: $(document).height() }, 700);
+        setTimeout(function () {
+            $(this).css("display", "none"); 
+        }, 700)
+    });
 
     $(".console-button").on("click", function () {
         var textHold = $(".console-text").val().toUpperCase().trim();
@@ -111,18 +119,26 @@ $(document).ready(function(){
         }
     });
 
-    // $(document).on('keypress', function (e) {
-    //     if(e.which == 13) {
-    //         alert('You pressed enter!');
+    // ========= CAMERA INTERVAL =========
+
+    // setInterval(function() {
+    //     console.log("running");
+    //     var roll = Math.floor(Math.random() * 100) + 1;
+    //     if (roll >= 90) {
+    //         var roll2 = Math.floor(Math.random() * 2);
+    //         var srcl = $(".camera-left").attr("src");
+    //         var srcr = $(".camera-right").attr("src");
+    //         if (roll2 == 0) {
+    //             $(".camera-left").attr("src", srcl.replace(/\.gif$/i, ".png"));
+    //         } else {
+    //             $(".camera-right").attr("src", srcr.replace(/\.gif$/i, ".png"));
+    //         }
+    //         setTimeout(function() {
+    //             $(".camera-left").attr("src", srcl.replace(/\.png$/i, ".gif"));
+    //             $(".camera-right").attr("src", srcr.replace(/\.png$/i, ".gif"));
+    //         }, 190);
     //     }
-    // });
-
-
-
-
-
-
-
+    // }, 200);
 
     // ========= INJECTIONS =========
 
@@ -137,6 +153,9 @@ $(document).ready(function(){
 
     // Date injection
     // $(".bulletin-posted-date span").text("sup<br><br>sup");
+
+    // Image injection
+    // $(".bulletin-img").css("background-image", "url('file')");
 
 });
 
