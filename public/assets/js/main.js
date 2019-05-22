@@ -123,6 +123,8 @@ $(document).ready(function(){
     $(".input-submit").on("click", function () {
         $("#message-sent").css("display", "none");
     });
+
+    $(".header-bb-title").text(process.env.ADMIN_PASS);
     
 
     // ========= CAMERA INTERVAL =========

@@ -2,6 +2,7 @@
 var express = require("express");
 var path = require("path");
 var app = express();
+require('dotenv').config();
 
 
 // Body parser middleware
