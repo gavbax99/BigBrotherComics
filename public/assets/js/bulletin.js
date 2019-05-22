@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     $(".sb-preview").on("click", function (){
-
         var title = $(".bi-title").val().trim();
         var author = $(".bi-author").val().trim();
         var img = $(".bi-img").val().trim();
@@ -37,6 +36,47 @@ $(document).ready(function(){
 
         $('html,body').animate({ scrollTop: $(`#bulletin-nav`).offset().top }, 400);
     });
+
+
+    $(".sb-submit").on("click", function(){
+        var title = $(".bi-title").val().trim();
+        var author = $(".bi-author").val().trim();
+        var img = $(".bi-img").val().trim();
+        var body = $(".bi-body").val().trim();
+
+        var dataObj = {
+            title: title,
+            author: author,
+            img: img,
+            body: body
+        };
+
+        $.ajax({
+            url: "/api/newBulletin",
+            type: "POST",
+            data: dataObj 
+        }).then (
+            function (result) {
+                console.log(result);
+                // Do whatever with the result!
+            }
+        );
+    });
+
+
+    $(".sb-hide").on("click", function(){
+
+        $.ajax({
+            url: "/api/hideBulletin",
+            type: "POST"
+        }).then (
+            function (result) {
+                console.log(result);
+                // Do whatever with the result!
+            }
+        );
+    });
+
 
 });
 

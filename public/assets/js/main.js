@@ -147,6 +147,19 @@ $(document).ready(function(){
 
     // ========= INJECTIONS =========
 
+    // $.ajax({
+    //     url: "/api/newBulletin",
+    //     type: "POST",
+    //     data: dataObj 
+    // }).then (
+    //     function (result) {
+    //         console.log(result);
+    //         // Do whatever with the result!
+    //     }
+    // );
+
+    // SELECT * FROM bigbrother_db.bulletins ORDER BY posted DESC LIMIT  1;
+
     // Main body injection
     // $(".bulletin-text-bottom").html("sup<br><br>sup");
 

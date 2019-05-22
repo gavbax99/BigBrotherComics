@@ -36,27 +36,22 @@ function objToSql(ob) {
 // =============================
 var model = {
 
-    // EXAMPLE METHOD
-    // selectTen: (tableInput, stat, cb) => {
-    //     console.log("selectTen");
+    createBulletin: (tableName, vals, cb) => {
 
-    //     var queryString = "SELECT * FROM " + tableInput + " ORDER BY " + stat +" DESC LIMIT 10;";
+        var queryString = `INSERT INTO ${tableName} SET ?`;
 
-    //     connection.query(queryString, function (err, res) {
-    //         if (err) throw err;
+        connection.query(queryString, {title: vals[0], author: vals[1], imgurl: vals[2], body: vals[3]}, function (err, res) {
+            if (err) throw err;
+            // Callback
+            cb(res);
+        });
+    },
 
-    //         cb(res);
-    //     });
-    // },
+    hideBulletin: (tableName, cb) => {
 
-    // EXAMPLE INPUT METHOD
-    create: (tableName, cols, vals, cb) => {
-        console.log("create");
+        var queryString = `INSERT INTO ${tableName} SET ?`;
 
-        //Build query string from inpunts
-        var queryString = `INSER INTO ${tableName} (${cols}) VALUES (${vals});`;
-
-        connection.query(queryString, function (err, res) {
+        connection.query(queryString, {hiddenbulletin: 1}, function (err, res) {
             if (err) throw err;
             // Callback
             cb(res);

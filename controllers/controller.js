@@ -73,23 +73,28 @@ router.get("/admin",
 });
 
 
-
 // API ROUTES 
 // *************************************************
-router.post("/api/nameFromMainJS", function (req, res) {
-    model.create(
-            "taable_name", 
+router.post("/api/newBulletin", function (req, res) {
+    model.createBulletin(
+            "bulletins", 
         [
-            'captain_name',
-            'ship_name'
-        ], 
-        [
-            req.body.captain_name,
-            req.body.ship_name
+            req.body.title,
+            req.body.author,
+            req.body.img,
+            req.body.body
         ], 
             function (result) {
             var resid = result.insertId;
-            idHolder = resid;
+            res.json({ id: resid });
+        });
+});
+
+router.post("/api/hideBulletin", function (req, res) {
+    model.hideBulletin(
+            "bulletins",
+            function (result) {
+            var resid = result.insertId;
             res.json({ id: resid });
         });
 });
