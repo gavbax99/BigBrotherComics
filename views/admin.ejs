@@ -26,7 +26,73 @@
 
 
         <!-- FORM START -->
-        <div class="form-container">
+        <div class="flex-full flex-col bulletin-form-container">
+
+            <div class="section-title" style="margin-bottom: 20px !important;">
+                <h1 class="main-rgb-txt" style="margin-bottom: 2px; text-shadow: 1px 1px rgb(160, 0, 0); font-size: 38px !important;">Post a Bulletin</h1>
+                <div style="height: 4px; background-color: red; width: 100px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto;"></div>
+            </div>
+
+            <div class="bulletin-form-width">
+
+                <div class="bulletin-description">
+                    Post a bulletin to the main Bulletin Board on <span style="color:red; font-weight: 600; text-decoration: underline;"><a href="https://bigbrothercomics.com">bigbrothercomics.com</a></span>
+                </div>
+    
+
+                <!-- form -->
+                <div class="flex-full flex-col bulletin-form-box">
+                    <div class="input-title">
+                        Title
+                    </div>
+                    <input class="bulletin-input bi-title" type="text" required="true" name="title" maxlength="80" placeholder="Title*"/>
+                    <div class="input-title">
+                        Author (Default = "STAFF")
+                    </div>
+                    <input class="bulletin-input bi-author" type="text" name="author" maxlength="30" placeholder="Author (optional)"/>
+                    <div class="input-title">
+                        Image URL (ending in .jpg or .png)
+                    </div>
+                    <input class="bulletin-input bi-img" type="text" required="true" name="img" maxlength="200" placeholder="Img URL*"/>
+                    <div class="input-title">
+                        Message (1000 char max)
+                    </div>
+                    <textarea class="bulletin-input bi-body" type="text" rows="12" required="true" name="body" maxlength="1000" placeholder="Message*"></textarea>
+                </div>
+    
+                <!-- submit buttons -->
+                <div class="flex-full flex-row bulletin-submit-buttons">
+
+                    <div class="submit-button sb-preview">
+                        Preview
+                    </div>
+
+                    <div class="submit-button sb-submit">
+                        Submit
+                    </div>
+                </div>
+    
+                <div style="width: 100%; text-align: center; margin-bottom: 8px; font-size: 16px;">or</div>
+
+                <!-- hide button -->
+                <div class="flex-full flex-row bulletin-hide-button">
+
+                    <div class="submit-button sb-hide">
+                        Hide Bulletin Board
+                    </div>
+
+                </div>
+
+    
+                <div class="bulletin-description">
+                    Hit "Preview" to see what it will look like live in the Bulletin Board replica below. Once it looks good, hit "Submit"! If you would like to hide the Bulletin Board on bigbrothercomics.com until the next post is made, simply click the "Hide Bulletin Board" button; the next time you want to post a bulletin, post like normally and the Bulletin Board will show back up.
+                </div>
+    
+                <div class="bulletin-description">
+                    NOTE: you can't edit your bulletins; if you are unhappy with the current bulletin, just make another to replace it.
+                </div>
+
+            </div>
 
 
         </div>
@@ -37,6 +103,9 @@
         <section id="bulletin-nav" class="bulletin">
 
             <div class="section-title">
+                <div class="bulletin-preview">
+                    PREVIEW!!!
+                </div>
                 <h1 class="main-rgb-txt" style="margin-bottom: 2px; text-shadow: 1px 1px rgb(160, 0, 0);">Bulletin Board</h1>
                 <div style="height: 4px; background-color: red; width: 205px; box-shadow: 1px 1px rgb(160, 0, 0); margin: 0 auto; margin-bottom: 15px;"></div>
                 <div class="bulletin-posted-date mont">This bulletin posted on <span style="font-weight: 700; color: red; text-shadow: .5px .5px rgb(160, 0, 0);">5/15/2019</span></div>
@@ -69,6 +138,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/bulletin.js"></script>
 
 </body>
 
