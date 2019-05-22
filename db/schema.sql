@@ -8,8 +8,8 @@ CREATE TABLE players (
 	author VARCHAR(30) NOT NULL DEFAULT "BB STAFF",
     imgurl VARCHAR(200) NOT NULL DEFAULT "../images/website-banner.jpg",
     body VARCHAR(1000) NOT NULL DEFAULT "BODY TEXT",
+    hidebulletin BOOLEAN NOT NULL DEFAULT 0,
     posted TIMESTAMP NOT NULL DEFAULT current_timestamp,
     
-
     PRIMARY KEY (id)
 );

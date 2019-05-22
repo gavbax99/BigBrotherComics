@@ -122,10 +122,7 @@ $(document).ready(function(){
     // Hides "Message Sent!" if sending multiple messages
     $(".input-submit").on("click", function () {
         $("#message-sent").css("display", "none");
-    });
-
-    $(".header-bb-title").text(process.env.ADMIN_PASS);
-    
+    });    
 
     // ========= CAMERA INTERVAL =========
 

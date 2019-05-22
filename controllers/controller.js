@@ -56,18 +56,18 @@ router.get("/", function (req, res) {
     res.render('index', { user: req.user });
 });
 
-router.get('/login', function(req, res) {
-    res.render('login');
+router.get('/bulletin', function(req, res) {
+    res.render('bulletin');
 });
 
-router.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
+router.post('/bulletin', 
+  passport.authenticate('local', { failureRedirect: '/bulletin' }),
   function(req, res) {
     res.redirect('/admin');
 });
 
 router.get("/admin", 
-    cel.ensureLoggedIn('/login'),
+    cel.ensureLoggedIn('/bulletin'),
     function(req, res) {
         res.render('admin', { user: req.user });
 });

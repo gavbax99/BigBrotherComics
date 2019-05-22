@@ -151,10 +151,6 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ratione iusto dolorum laborum placeat magnam rerum! Ab nobis minus aut magnam, dolores pariatur, eligendi non delectus blanditiis provident quidem voluptatibus.<br><br>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, labore porro vel exercitationem, facilis nisi debitis quaerat temporibus eveniet pariatur esse voluptatum, sit deserunt voluptatem tempora suscipit dicta alias perspiciatis!
                     </div>
-
-                    <div class="see-past-bulletin mont">
-                            <a href="#">See past bulletins</a>
-                    </div>
                 </div>
 
             </div>
@@ -529,6 +525,11 @@
                             <input id="input-name" name="name" class="input-little input-name-fix" type="text" required="true" placeholder="Name*">
                             <input id="input-email" name="email" class="input-little" type="text" required="true" placeholder="Email*">
                             <textarea id="input-message" name="message" class="input-big" rows="12" required="true" type="text" placeholder="Message*"></textarea>
+
+                            <!-- reCaptcha by Google; gotta wait until this is deployed to bigbrothercomics.com -->
+                            <!-- <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LfQ-qQUAAAAALD034ZYvztLIc63ox4GS4YlqPMk"></div>
+                            <span id="captcha" style="color:red"></span>  -->
+
                             <input type="submit" value="Send Message" class="input-submit">
                             <div class="loading-message" style="display:none;"></div>
                             <div id="message-sent" class="ty-margin thankyou_message" style="display:none;">
@@ -612,20 +613,27 @@
     <script src="./assets/js/main.js"></script>
     <script data-cfasync="false" type="text/javascript" src="assets/js/gform-custom-send.js"></script>
 
+    <!-- reCaptcha by Google; gotta wait until this is deployed to bigbrothercomics.com -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+
+        function get_action(form) 
+        {
+            var v = grecaptcha.getResponse();
+            if(v.length == 0)
+            {
+                document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+                return false;
+            }
+            else
+            {
+                document.getElementById('captcha').innerHTML="Captcha completed";
+                return true; 
+            }
+        }
+
+    </script> -->
+
 </body>
 
 </html>
-
-
-<!-- <form id="gform" class="gform clearfix" method="POST" action="https://script.google.com/macros/s/AKfycbw4UxWYM3MK9aP2APOE68dsblRGHmGClFACk3aryQ/exec">
-
-    <input id="input-name" name="name" class="input-little input-name-fix" type="text" required="true" placeholder="Name*">
-    <input id="input-email" name="email" class="input-little" type="text" required="true" placeholder="Email*">
-    <textarea id="input-message" name="message" class="input-big" rows="6" required="true" type="text" placeholder="Message*"></textarea>
-    <input type="submit" value="Send Message" class="input-submit">
-    <div class="loading-message" style="display:none;"></div>
-    <div id="message-sent" class="ty-margin thankyou_message" style="display:none;">
-        Message sent!
-    </div>
-
-</form> -->

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>BB Admin Login</title>
+    <meta name="description" content="Big Brother Comics is your number one source for comics, board games, and Magic the Gathering in Sacramento!">
+    <meta name="author" content="Gavin Baxter | https://gavbax99.github.io/UCDPortfolio/">
+    <link rel="shortcut icon" href="./assets/images/favicon.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/bulletin.css" />
+
+</head>
+
+<body>
+
+    <div id="wrapper" style="font-family: Arial, Helvetica, sans-serif !important;">
+
+        <a href="/">
+            <div class="back-button">
+                BACK TO MAIN SITE
+            </div>
+        </a>
+
+        <div class="form-container">
+
+            <form action="/bulletin" method="post">
+                <div style="display: none;">
+                    <input type="text" name="username" value="bb"/>
+                </div>
+
+                <div>
+                    <input type="password" name="password" style="text-align: center;padding:3px 6px; font-size: 20px;"/><br/>
+                </div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <input type="submit" value="LOGIN" style="padding: 10px 20px;"/>
+                </div>
+            </form> 
+
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+
+</html>
