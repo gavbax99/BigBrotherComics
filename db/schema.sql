@@ -1,11 +1,15 @@
-CREATE DATABASE first_db;
+CREATE DATABASE bigbrother_db;
 
-USE first_db;
+USE bigbrother_db;
 
 CREATE TABLE players (
     id INTEGER NOT NULL AUTO_INCREMENT,
-    char_name_token VARCHAR(200) NOT NULL DEFAULT "Joe",
-    created TIMESTAMP NOT NULL DEFAULT current_timestamp,
+    title VARCHAR(80) NOT NULL DEFAULT "BULLETIN POST",
+	author VARCHAR(30) NOT NULL DEFAULT "BB STAFF",
+    imgurl VARCHAR(200) NOT NULL DEFAULT "../images/website-banner.jpg",
+    body VARCHAR(1000) NOT NULL DEFAULT "BODY TEXT",
+    posted TIMESTAMP NOT NULL DEFAULT current_timestamp,
+    
 
     PRIMARY KEY (id)
 );
