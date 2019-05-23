@@ -36,6 +36,17 @@ function objToSql(ob) {
 // =============================
 var model = {
 
+    getBulletin: (cb) => {
+
+        var queryString = `SELECT * FROM bigbrother_db.bulletins ORDER BY posted DESC LIMIT 1;`;
+
+        connection.query(queryString, function (err, res) {
+            if (err) throw err;
+            // Callback
+            cb(res);
+        });
+    },
+
     createBulletin: (tableName, vals, cb) => {
 
         var queryString = `INSERT INTO ${tableName} SET ?`;

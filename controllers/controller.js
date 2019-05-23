@@ -75,6 +75,14 @@ router.get("/admin",
 
 // API ROUTES 
 // *************************************************
+router.get("/api/getBulletin", function (req, res) {
+    model.getBulletin(
+        function (result) {
+            res.json(result);
+        }
+    );
+});
+
 router.post("/api/newBulletin", function (req, res) {
     model.createBulletin(
             "bulletins", 
@@ -87,7 +95,7 @@ router.post("/api/newBulletin", function (req, res) {
             function (result) {
             var resid = result.insertId;
             res.json({ id: resid });
-        });
+    });
 });
 
 router.post("/api/hideBulletin", function (req, res) {

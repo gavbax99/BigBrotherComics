@@ -1,5 +1,3 @@
-console.log("WORKS");
-
 (function () {
     function validEmail(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -101,8 +99,9 @@ console.log("WORKS");
                     document.getElementById("gform").reset();  // Resets the form fields right when you submit
                     // GAVIN'S CODE HERE -----------------------------------------------------
                     loadingCircle.style.display = "none";  // Hides circle
-                    // GAVIN'S CODE HERE -----------------------------------------------------
                     thankYouMessage.style.display = "block";
+                    document.getElementById("submitButton").disabled = true;
+                    // GAVIN'S CODE HERE -----------------------------------------------------
                 }
                 return;
             };
@@ -115,7 +114,6 @@ console.log("WORKS");
     }
 
     function loaded() {
-        console.log("Contact form submission handler loaded successfully.");
         // bind to the submit event of our form
         var forms = document.querySelectorAll("form.gform");
         for (var i = 0; i < forms.length; i++) {

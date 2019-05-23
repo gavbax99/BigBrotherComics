@@ -60,7 +60,6 @@ $(document).ready(function(){
 
     $(".footer-text span").text(year);
 
-
     // CONSOLE COMMAND
 
     function runConsole(input) {
@@ -117,12 +116,7 @@ $(document).ready(function(){
             textHold = textHold.replace(/\s\s+/g, ' ');
             runConsole(textHold);
         }
-    });
-
-    // Hides "Message Sent!" if sending multiple messages
-    $(".input-submit").on("click", function () {
-        $("#message-sent").css("display", "none");
-    });    
+    });  
 
     // ========= CAMERA INTERVAL =========
 
@@ -147,33 +141,36 @@ $(document).ready(function(){
 
     // ========= INJECTIONS =========
 
-    // $.ajax({
-    //     url: "/api/newBulletin",
-    //     type: "POST",
-    //     data: dataObj 
-    // }).then (
-    //     function (result) {
-    //         console.log(result);
-    //         // Do whatever with the result!
-    //     }
-    // );
+    $.get("/api/getBulletin", function(result){
+        var title = result[0].title;
+        var author = result[0].author;
+        var img = result[0].imgurl;
+        var body = result[0].body;
+        var year = result[0].posted.substring(0, 4);
+        var month = result[0].posted.substring(5, 7);
+        var day = result[0].posted.substring(8, 10);
+        var date = `${month}/${day}/${year}`;
+        var hb = result[0].hiddenbulletin;
 
-    // SELECT * FROM bigbrother_db.bulletins ORDER BY posted DESC LIMIT  1;
+        if (hb == 1) {
+            $(".bulletin").css("display", "none");
+        } else {
+            updateBulletin(title, author, img, body, date);
+        }
+    });
 
-    // Main body injection
-    // $(".bulletin-text-bottom").html("sup<br><br>sup");
-
-    // Title injection
-    // $(".bulletin-title").text("sup<br><br>sup");
-
-    // Author injection
-    // $(".bulletin-author span").text("sup<br><br>sup");
-
-    // Date injection
-    // $(".bulletin-posted-date span").text("sup<br><br>sup");
-
-    // Image injection
-    // $(".bulletin-img").css("background-image", "url('file')");
+    function updateBulletin(title, author, img, body, date) {
+        // Main body injection
+        $(".bulletin-text-bottom").html(body);
+        // Title injection
+        $(".bulletin-title").text(title);
+        // Author injection
+        $(".bulletin-author span").text(author);
+        // Date injection
+        $(".bulletin-posted-date span").text(date);
+        // Image injection
+        $(".bulletin-img").css("background-image", `url('${img}')`);
+    };
 
 });
 
