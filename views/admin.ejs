@@ -24,6 +24,24 @@
 
     <div id="wrapper">
 
+        <!-- MODAL START -->
+        <div class="flex-full flex-col modal modal-submit mont">
+            <div class="modal-text">Are you sure you want to submit this bulletin?</div>
+            <div class="flex-full flex-row modal-buttons">
+                <div class="modal-button modal-button-left bulletin-submit">SUBMIT</div>
+                <div class="modal-button modal-button-right bulletin-back">BACK</div>
+            </div>
+        </div>
+
+        <!-- MODAL START -->
+        <div class="flex-full flex-col modal modal-hide mont">
+            <div class="modal-text">Are you sure you want to hide bulletins?</div>
+            <div class="flex-full flex-row modal-buttons">
+                <div class="modal-button modal-button-left green bulletin-hide">HIDE</div>
+                <div class="modal-button modal-button-right bulletin-back">BACK</div>
+            </div>
+        </div>
+
 
         <!-- FORM START -->
         <div class="flex-full flex-col bulletin-form-container">
@@ -36,40 +54,45 @@
             <div class="bulletin-form-width">
 
                 <div class="bulletin-description">
-                    Post a bulletin to the main Bulletin Board on <span style="color:red; font-weight: 600; text-decoration: underline;"><a href="/">bigbrothercomics.com</a></span>
+                    Post a bulletin to the main Bulletin Board on <span style="color:red; font-weight: 600; text-decoration: underline;"><a target="_blank" href="/">bigbrothercomics.com</a></span>
                 </div>
     
 
                 <!-- form -->
                 <div class="flex-full flex-col bulletin-form-box">
                     <div class="input-title">
-                        Title
+                        Title<br>
+                        <span class="input-description">Required.</span>
                     </div>
-                    <input class="bulletin-input bi-title" type="text" required="true" name="title" maxlength="80" placeholder="Title*"/>
+                    <input class="bulletin-input bi-title" type="text" required="true" name="title" maxlength="80" placeholder="Title"/>
                     <div class="input-title">
-                        Author (Default = "STAFF")
+                        Author<br>
+                        <span class="input-description">Optional. If left blank, defaults to "Staff".</span>
                     </div>
-                    <input class="bulletin-input bi-author" type="text" name="author" maxlength="30" placeholder="Author (optional)"/>
+                    <input class="bulletin-input bi-author" type="text" name="author" maxlength="30" placeholder="Author"/>
                     <div class="input-title">
-                        Image URL (ending in .jpg or .png)
+                        Image URL<br>
+                        <span class="input-description">Required. The image url must end in .png or .jpg (you can host images on <a target="_blank" style="color: red;" href="https://imgur.com">imgur.com</a>).</span>
                     </div>
-                    <input class="bulletin-input bi-img" type="text" required="true" name="img" maxlength="200" placeholder="Img URL*"/>
+                    <input class="bulletin-input bi-img" type="text" required="true" name="img" maxlength="200" placeholder="Image URL"/>
                     <div class="input-title">
-                        Message (1000 char max)
+                        Message<br>
+                        <span class="input-description">Required. 1000 character limit. HTML formatting.</span>
                     </div>
-                    <textarea class="bulletin-input bi-body" type="text" rows="12" required="true" name="body" maxlength="1000" placeholder="Message*"></textarea>
+                    <textarea class="bulletin-input bi-body" type="text" rows="12" required="true" name="body" maxlength="1000" placeholder="Message"></textarea>
                 </div>
     
                 <!-- submit buttons -->
                 <div class="flex-full flex-row bulletin-submit-buttons">
 
+                    <div class="submit-button sb-submit">
+                        Submit
+                    </div>
+
                     <div class="submit-button sb-preview">
                         Preview
                     </div>
 
-                    <div class="submit-button sb-submit">
-                        Submit
-                    </div>
                 </div>
     
                 <div style="width: 100%; text-align: center; margin-bottom: 8px; font-size: 16px;">or</div>
@@ -82,14 +105,9 @@
                     </div>
 
                 </div>
-
     
                 <div class="bulletin-description">
-                    Hit "Preview" to see what it will look like live in the Bulletin Board replica below. Once it looks good, hit "Submit"! If you would like to hide the Bulletin Board on bigbrothercomics.com until the next post is made, simply click the "Hide Bulletin Board" button; the next time you want to post a bulletin, post like normally and the Bulletin Board will show back up.
-                </div>
-    
-                <div class="bulletin-description">
-                    NOTE: you can't edit your bulletins; if you are unhappy with the current bulletin, just make another to replace it.
+                    NOTES: you can't edit your bulletins once you post them; if you are unhappy with the current bulletin submit another to replace it. If the bulletin board is currently hidden, simply submit a new bulletin to display it.
                 </div>
 
             </div>

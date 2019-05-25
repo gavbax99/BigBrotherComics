@@ -26,7 +26,11 @@ $(document).ready(function(){
         $(".bulletin-title").text(title);
 
         // Author injection
-        $(".bulletin-author span").text(author);
+        if (author.length > 0) {
+            $(".bulletin-author span").text(author);
+        } else {
+            $(".bulletin-author span").text("Staff");
+        }        
 
         // Date injection
         $(".bulletin-posted-date span").text(completeDate);
@@ -38,7 +42,29 @@ $(document).ready(function(){
     });
 
 
-    $(".sb-submit").on("click", function(){
+    $(".sb-submit").on("click", function () {
+        $(".modal-submit").css("display", "flex");
+        $(".modal-submit").css("opacity", "1");
+        $(".modal-submit").css("top", "35%");
+    });
+
+    $(".sb-hide").on("click", function () {
+        $(".modal-hide").css("display", "flex");
+        $(".modal-hide").css("opacity", "1");
+        $(".modal-hide").css("top", "35%");
+    });
+
+
+    $(".bulletin-back").on("click", function () {
+        $(".modal").css("opacity", "0");
+        $(".modal").css("top", "38%");
+        setTimeout(function(){
+            $(".modal").css("display", "none");
+        }, 500);
+    });
+
+
+    $(".bulletin-submit").on("click", function(){
         var title = $(".bi-title").val().trim();
         var author = $(".bi-author").val().trim();
         var img = $(".bi-img").val().trim();
@@ -51,28 +77,33 @@ $(document).ready(function(){
             body: body
         };
 
-        $.ajax({
-            url: "/api/newBulletin",
-            type: "POST",
-            data: dataObj 
-        }).then (
-            function (result) {
-                console.log(result);
-                // Do whatever with the result!
-            }
-        );
+        if (title.length == 0 || img.length == 0 || body.length == 0) {
+            alert("Fill out all required feilds (title, img, message).");
+        } else {
+            $.ajax({
+                url: "/api/newBulletin",
+                type: "POST",
+                data: dataObj 
+            }).then (
+                function (result) {
+                    // console.log(result);
+                    window.location = "/";
+                }
+            );
+        }
     });
 
 
-    $(".sb-hide").on("click", function(){
+    //CHANGE TARGET 
+    $(".bulletin-hide").on("click", function(){
 
         $.ajax({
             url: "/api/hideBulletin",
             type: "POST"
         }).then (
             function (result) {
-                console.log(result);
-                // Do whatever with the result!
+                // console.log(result);
+                window.location = "/";
             }
         );
     });
