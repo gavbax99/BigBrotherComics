@@ -641,6 +641,16 @@ header {
     display: none;
 }
 
+.weekly-direction-text-desktop {
+    display: inline;
+}
+
+.weekly-direction-text-mobile {
+    display: none;
+}
+
+
+
 /* 4. ***************       NEW RELEASES       ****************** */
 /* *********************************************************** */
 
@@ -685,6 +695,7 @@ header {
 .table-games-box {
     width: 50%;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 
 .table-games-item {
@@ -1007,11 +1018,11 @@ header {
 }
 
 .footer-about-bb {
-    font-size: 11px; 
+    font-size: 11px;
     padding-top: 6px;
-    max-width: 420px;
+    max-width: 510px;
     padding-right: 50px;
-    line-height: 12px;
+    line-height: 14px;
 }
 
 .footer-logo {
@@ -1542,6 +1553,13 @@ header {
         height: 40px;
     }
     
+    .weekly-direction-text-desktop {
+        display: none;
+    }
+    
+    .weekly-direction-text-mobile {
+        display: inline;
+    }
 }
 
 

@@ -1,1 +1,1 @@
-INSERT INTO bulletins (title, author, imgurl, body, hiddenbulletin) VALUES ("test", "test", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg", "test", "0");
+INSERT INTO bulletins (title, author, imgurl, body, hiddenbulletin) VALUES ("New day, new website!", "Gavin", "https://www.trianglerealtyllc.com/wp-content/uploads/2018/04/NewWebLaunch.jpg", "Hello world!<br><br>Big brother Comics is proud to unveil its new website! Take a look around :)", "0");
