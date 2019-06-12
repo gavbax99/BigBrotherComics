@@ -70,6 +70,18 @@
         }
         */
 
+
+
+        // GAVIN'S CODE HERE -----------------------------------------------------
+        // console.log("THIS IS THE DATA")
+        // console.log(data.submit);
+
+        // if the data contains a "submit" feild, it was forced through by a bot, so we stop the whole handling function
+        if (data.submit) {
+            return;
+        }
+        // GAVIN'S CODE HERE -----------------------------------------------------
+
         if (data.email && !validEmail(data.email)) {   // if email is not valid show error
             var invalidEmail = form.querySelector(".email-invalid");
             if (invalidEmail) {
@@ -77,39 +89,47 @@
                 return false;
             }
         } else {
-            // GAVIN'S CODE HERE -----------------------------------------------------
-            var loadingCircle = form.querySelector(".loading-message");  // To select the loading circle 'gif'
-            loadingCircle.style.display = "block";  // To display the loading circle until message is sent, then hidden before the user sees "Message sent!"
-            // GAVIN'S CODE HERE -----------------------------------------------------
-            disableAllButtons(form);
-            var url = form.action;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', url);
-            // xhr.withCredentials = true;
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                console.log(xhr.status, xhr.statusText);
-                console.log(xhr.responseText);
-                var formElements = form.querySelector(".form-elements")
-                if (formElements) {
-                    formElements.style.display = "none"; // hide form
-                }
-                var thankYouMessage = form.querySelector(".thankyou_message");
-                if (thankYouMessage) {
-                    document.getElementById("gform").reset();  // Resets the form fields right when you submit
-                    // GAVIN'S CODE HERE -----------------------------------------------------
-                    loadingCircle.style.display = "none";  // Hides circle
-                    thankYouMessage.style.display = "block";
-                    document.getElementById("submitButton").disabled = true;
-                    // GAVIN'S CODE HERE -----------------------------------------------------
-                }
+
+            var response = grecaptcha.getResponse();
+
+            if (response.length === 0) {
                 return;
-            };
-            // url encode form data for sending as post data
-            var encoded = Object.keys(data).map(function (k) {
-                return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-            }).join('&');
-            xhr.send(encoded);
+            } else {
+                // GAVIN'S CODE HERE -----------------------------------------------------
+                var loadingCircle = form.querySelector(".loading-message");  // To select the loading circle 'gif'
+                loadingCircle.style.display = "block";  // To display the loading circle until message is sent, then hidden before the user sees "Message sent!"
+                // GAVIN'S CODE HERE -----------------------------------------------------
+                disableAllButtons(form);
+                var url = form.action;
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                // xhr.withCredentials = true;
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    console.log(xhr.status, xhr.statusText);
+                    console.log(xhr.responseText);
+                    var formElements = form.querySelector(".form-elements")
+                    if (formElements) {
+                        formElements.style.display = "none"; // hide form
+                    }
+                    var thankYouMessage = form.querySelector(".thankyou_message");
+                    if (thankYouMessage) {
+                        document.getElementById("gform").reset();  // Resets the form fields right when you submit
+                        // GAVIN'S CODE HERE -----------------------------------------------------
+                        loadingCircle.style.display = "none";  // Hides circle
+                        thankYouMessage.style.display = "block";
+                        document.getElementById("submitButton").disabled = true;
+                        // GAVIN'S CODE HERE -----------------------------------------------------
+                    }
+                    return;
+                };
+                // url encode form data for sending as post data
+                var encoded = Object.keys(data).map(function (k) {
+                    return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                }).join('&');
+                xhr.send(encoded);
+            }
+           
         }
     }
 

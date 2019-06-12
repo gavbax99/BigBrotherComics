@@ -28,6 +28,19 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+        function validateRecaptcha() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert("Please validate the checkbox.");
+                return false;
+            } else {
+                return true;
+            }
+        };
+    </script>
+
 </head>
 
 <body>
@@ -526,15 +539,13 @@
 
 
                     <div class="flex-full flex-col contact-form-container">
-                        <form id="gform" class="gform clearfix" method="POST" action="https://script.google.com/macros/s/AKfycbw4UxWYM3MK9aP2APOE68dsblRGHmGClFACk3aryQ/exec">
+                        <form id="gform" class="gform clearfix" method="POST" action="https://script.google.com/macros/s/AKfycbw4UxWYM3MK9aP2APOE68dsblRGHmGClFACk3aryQ/exec" onsubmit="return validateRecaptcha();">
 
                             <input id="input-name" name="name" class="input-little input-name-fix" type="text" required="true" placeholder="Name*">
                             <input id="input-email" name="email" class="input-little" type="text" required="true" placeholder="Email*">
-                            <textarea id="input-message" name="message" class="input-big" rows="12" required="true" type="text" placeholder="Message*"></textarea>
-
-                            <!-- reCaptcha by Google; gotta wait until this is deployed to bigbrothercomics.com -->
-                            <!-- <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LfQ-qQUAAAAALD034ZYvztLIc63ox4GS4YlqPMk"></div>
-                            <span id="captcha" style="color:red"></span>  -->
+                            <textarea id="input-message" name="message" class="input-big" rows="8" required="true" type="text" placeholder="Message*"></textarea>
+                            
+                            <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LceiqgUAAAAAFWmCv3giHE7VLPethCu3yv5wBvT"></div>
 
                             <input id="submitButton" type="submit" value="Send Message" class="input-submit">
                             <div class="loading-message" style="display:none;"></div>
@@ -576,12 +587,11 @@
         <footer class="flex-full flex-row footer-class">
             
             <div class="flex-full flex-col footer-text-section">
+                
                 <!-- Year automatically injected from JS -->
-
                 <div class="footer-text">
                     <div>© BIG BROTHER COMICS <span>XXXX</span></div>
                     <div style="width: 145px; height: 2px; background-color: #fff; margin-top: 2px; box-shadow: 1px 1px #181818;"></div>
-                    <!-- <div class="footer-about-bb mont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia exercitationem ullam sequi provident deserunt animi vero here repudiandae cum eaque. Id est odio maiores sequi deserunt re excepturi tempore suscipit itaque repellendus. This is some more text because we need to fill another line. </div> -->
                     <div class="footer-about-bb mont">Since 2006 Big Brother Comics has been your source for new & used comics, trade paperbacks, board games, and Magic: the Gathering in the Sacramento area. In 2016, after 10 years of being on 18th and J street, Big Brother Comics experienced a <a target="_blank" href="https://www.kcra.com/article/fire-leaves-sacramento-comic-book-store-charred/6429476" style="text-decoration: underline;">devastating fire,</a> but like a phoenix from the fire, we emerged stronger than ever! We are proud to continue serving the Sacramento comic & game community.</div>
                 </div>
             </div>
@@ -625,27 +635,6 @@
     <script src="./assets/js/slick.js"></script>
     <script src="./assets/js/main.js"></script>
     <script data-cfasync="false" type="text/javascript" src="assets/js/gform-custom-send.js"></script>
-
-    <!-- reCaptcha by Google; gotta wait until this is deployed to bigbrothercomics.com -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-
-        function get_action(form) 
-        {
-            var v = grecaptcha.getResponse();
-            if(v.length == 0)
-            {
-                document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-                return false;
-            }
-            else
-            {
-                document.getElementById('captcha').innerHTML="Captcha completed";
-                return true; 
-            }
-        }
-
-    </script> -->
 
 </body>
 
