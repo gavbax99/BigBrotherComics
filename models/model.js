@@ -38,7 +38,7 @@ var model = {
 
     getBulletin: (cb) => {
 
-        var queryString = `SELECT * FROM bigbrother_db.bulletins ORDER BY posted DESC LIMIT 1;`;
+        var queryString = `SELECT * FROM bigbrot1_db.bulletins ORDER BY posted DESC LIMIT 1;`;
 
         connection.query(queryString, function (err, res) {
             if (err) throw err;

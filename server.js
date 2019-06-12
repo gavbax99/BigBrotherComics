@@ -25,7 +25,7 @@ var session = require('express-session');
 require('dotenv').config();
 
 // Setup dynamic PORT (default 8080)
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 42099;
 
 
 // ================ SETUP PUBLIC DIR ================
